@@ -16,4 +16,8 @@ RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 RUN cat requirements.txt
 
-CMD ["python3", "/main.py"]
+RUN ls .
+
+RUN poetry install
+
+CMD ["python3", "app/main.py"]
