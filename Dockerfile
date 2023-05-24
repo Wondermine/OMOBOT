@@ -10,8 +10,4 @@ RUN pip install poetry
 
 RUN poetry config virtualenvs.create false
 
-RUN poetry install
-
-COPY . /app
-
 CMD ["python3", "/app/main.py"]
