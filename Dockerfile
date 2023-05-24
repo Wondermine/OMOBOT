@@ -20,4 +20,4 @@ RUN ls .
 
 RUN poetry install
 
-CMD ["python3", "app/main.py"]
+CMD ["python3", "/main.py"]
