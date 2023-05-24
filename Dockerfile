@@ -10,10 +10,10 @@ RUN pip install poetry
 
 RUN poetry config virtualenvs.create false
 
+COPY . /app
+
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 RUN cat requirements.txt
-
-COPY . /app
 
 CMD ["python3", "/main.py"]
