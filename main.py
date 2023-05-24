@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 intents = discord.Intents.none()
+
 class OMORPG(commands.AutoShardedBot):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -17,11 +18,13 @@ class OMORPG(commands.AutoShardedBot):
         self.E_LIST = ["cogs.utils", "cogs.information"]
 
     async def on_shard_connect(self, shard):
+
         print(f"SHARD {shard} IS UP AND WORKING")
         print(f"currently at {len(self.guilds)} Guilds")
+
         for i in self.E_LIST:
             await self.load_extension(i)
-            print(i)
+            print("{} has been loaded".format(i))
 
         await self.tree.sync()
 
