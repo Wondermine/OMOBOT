@@ -10,4 +10,4 @@ RUN pip install poetry
 
 RUN poetry config virtualenvs.create false
 
-CMD ["python3", "/app/main.py"]
+CMD ["python3", "/main.py"]
