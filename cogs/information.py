@@ -19,7 +19,7 @@ class Information(commands.Cog):
         embed.set_thumbnail(
             url="https://cdn.discordapp.com/icons/1101417305897979975/156cc6cbca7337f0d1afcf0e99ea9464.png?size=4096")
 
-        embed.color=discord.Color.from_rgb(255,255,255)
+        embed.color=discord.Color.from_rgb(255, 255, 255)
 
 
 
