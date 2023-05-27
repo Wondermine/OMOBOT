@@ -1,0 +1,2 @@
+id,name,description,world,stage,image,animation,health,max_health,damage,defense,skills
+0,bunny,A bunny!,1,1,None,None,10,20,5,2,[]

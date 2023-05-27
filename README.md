@@ -1,6 +1,6 @@
 # OMORPG
 
-An OMORI themed discord bot that works as an text based RPG
+An OMORI themed discord bot that works as a text based RPG
 
 # Description
 

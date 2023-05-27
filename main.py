@@ -9,6 +9,8 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 import logging
 
+import traceback
+
 load_dotenv()
 
 intents = discord.Intents.none()
@@ -36,15 +38,26 @@ class OMORPG(commands.AutoShardedBot):
         self.players = None
 
         self.activity = discord.Game("OMORPG | 🔪 under construction")
-        self.E_LIST = ["cogs.utils", "cogs.information"]
+        self.E_LIST = ["cogs.utils", "cogs.information", "cogs.data", "cogs.game"]
 
-    async def on_ready(self):
+    async def setup_hook(self) -> None:
 
-        for i in self.E_LIST:
-            await self.load_extension(i)
-            _log.info(f"🔁 | {i} has been loaded")
+        # sys.excepthook = self.exception_handler
+        for filename in os.listdir("./cogs"):
+            if os.path.isfile(os.path.join("./cogs/", filename)):
+
+                try:
+                    if filename.endswith(".py"):
+                        cog = f"cogs.{filename[:-3]}"
+                        _log.info(f"🔁 | {cog} has been loaded")
+                        await self.load_extension(cog)
+
+                except Exception as e:
+                    print(f"Failed to load cog {filename}")
+                    traceback.print_exc()
 
         await self.tree.sync()
+        _log.info(f"✅ | Commands tree has been synced")
         await self.database_connection()
 
     async def database_connection(self):
@@ -52,6 +65,10 @@ class OMORPG(commands.AutoShardedBot):
         self.db = self.cluster["database"]
         self.players = self.db["players"]
         _log.info("✅ | Database connection has been established")
+
+    @property
+    def data(self):
+        return self.get_cog("Data").instance
 
 
 vessel = OMORPG(command_prefix=">", intents=intents, owner_ids=[1051383406598045696])

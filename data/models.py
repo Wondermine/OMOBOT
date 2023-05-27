@@ -1,5 +1,3 @@
-from functools import cached_property
-
 from dataclasses import dataclass
 
 import typing
@@ -12,6 +10,7 @@ class UnregisteredDataManager:
 class UnregisteredError(Exception):
     pass
 
+
 @dataclass
 class Character:
     id: int
@@ -20,6 +19,7 @@ class Character:
     world: int
     frame_image: str
     skills: list
+
 
 @dataclass
 class Item:
@@ -40,22 +40,24 @@ class Item:
 class Skill:
     id: int
     name: str
-    level: int
-    world: int
     description: str
+    world: int
+    level: int
     image: str
     animation: str
     juice: int
     character: int
 
+    instance: typing.Any = UnregisteredDataManager()
+
 
 @dataclass
-class Enemies:
+class Enemy:
     id: int
     name: str
+    description: str
     world: int
     stage: int
-    description: str
     image: str
     animation: str
     health: int
@@ -63,3 +65,18 @@ class Enemies:
     damage: int
     defense: int
     skills: list
+
+    instance: typing.Any = UnregisteredDataManager()
+
+@dataclass
+class DataManagerBase:
+    enemies: typing.Dict[int, Enemy] = None
+    items: typing.Dict[int, Item] = None
+    skills: typing.Dict[int, Skill] = None
+    characters: typing.Dict[int, Character] = None
+
+    def all_enemies(self):
+        return self.enemies.values()
+
+    def all_items(self):
+        return self.items.values()
