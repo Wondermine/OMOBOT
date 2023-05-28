@@ -41,10 +41,9 @@ class Skill:
     id: int
     name: str
     description: str
-    world: int
+    type: int
     level: int
     image: str
-    animation: str
     juice: int
     character: int
 
@@ -60,10 +59,14 @@ class Enemy:
     stage: int
     image: str
     animation: str
-    health: int
-    max_health: int
-    damage: int
+    heart: int
+    juice: int
+    max_heart: int
+    attack: int
     defense: int
+    speed: int
+    luck: int
+    hit_rate: int
     skills: list
 
     instance: typing.Any = UnregisteredDataManager()

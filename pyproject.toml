@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "omorpg"
-version = "0.1.0"
-description = ""
-authors = ["Taha Abdulgader <undefined@example.com>"]
+version = "1.0.0"
+description = "A discord bot that is OMORI Themed"
+authors = ["LetsChill <undefined@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]

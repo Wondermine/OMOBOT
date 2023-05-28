@@ -27,12 +27,13 @@ def get_data_from(filename):
 
     return data
 
+
 def get_items(instance):
-    data = get_data_from("items.csv")
+    items_data = get_data_from("items.csv")
 
     items = {}
 
-    for row in data:
+    for row in items_data:
         items[row["id"]] = models.Item(
             id=row["id"],
             name=row["name"],
@@ -44,32 +45,39 @@ def get_items(instance):
         )
     return items
 
+
 def get_skills(instance):
-    data = get_data_from("skills.csv")
+    skills_data = get_data_from("skills.csv")
 
     skills = {}
 
-    for row in data:
-        skills[row["id"]] = models.Skill(
+    for row in skills_data:
+        skill = models.Skill(
             id=row["id"],
             name=row["name"],
             description=row["description"],
-            world=row["world"],
+            type=row["type"],
             level=row["level"],
-            image=row["image"],
-            animation=row["animation"],
             juice=row["juice"],
+            image=row["image"],
             character=row["character"],
             instance=instance
         )
+
+        if row["image"] == "null":
+            skill.image = None
+
+        skills[row["id"]] = skill
+
     return skills
 
+
 def get_enemies(instance):
-    data = get_data_from("enemies.csv")
+    enemies_data = get_data_from("enemies.csv")
 
     enemies = {}
 
-    for row in data:
+    for row in enemies_data:
         enemies[row["id"]] = models.Enemy(
             id=row["id"],
             name=row["name"],
@@ -78,10 +86,14 @@ def get_enemies(instance):
             stage=row["stage"],
             image=row["image"],
             animation=row["animation"],
-            health=row["health"],
-            max_health=row["max_health"],
-            damage=row["damage"],
+            heart=row["heart"],
+            max_heart=row["max_heart"],
+            attack=row["attack"],
             defense=row["defense"],
+            speed=row["speed"],
+            juice=row["juice"],
+            luck=row["luck"],
+            hit_rate=row["hit_rate"],
             skills=row["skills"],
             instance=instance
         )

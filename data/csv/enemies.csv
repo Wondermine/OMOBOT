@@ -1,2 +1,2 @@
-id,name,description,world,stage,image,animation,health,max_health,damage,defense,skills
-0,bunny,A bunny!,1,1,None,None,10,20,5,2,[]
+id,name,description,world,stage,image,animation,heart,juice,max_heart,attack,defense,speed,luck,hit_rate,skills
+0,bunny,A bunny!,1,1,None,None,10,20,20,5,2,1,2,1,[]
