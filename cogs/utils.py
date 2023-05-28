@@ -22,7 +22,7 @@ class Utilities(commands.Cog):
 
         embed = discord.Embed(
                 title="More Information:",
-                colour=discord.Color.red(),
+                color=discord.Color.red(),
         )
         start = time.perf_counter()
         await msg.edit(content=f"{inter.user.mention} Trying to ping...")

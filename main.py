@@ -1,75 +1,72 @@
-import discord
-from discord.ext import commands
-
-import os
-
-from dotenv import load_dotenv
-
+from discord.ext.commands.errors import ExtensionError
 from motor.motor_asyncio import AsyncIOMotorClient
-
-import logging
-
+from discord.ext import commands
+from dotenv import load_dotenv
+from importlib import reload
+from typing import Union
 import traceback
+import discord
+import logging
+import data
+import os
 
 load_dotenv()
 
-intents = discord.Intents.none()
-
-_log = logging.getLogger("discord")
+token = os.getenv("TOKEN")
 
 
-class Colors:
-    blue = "\033[94m"
-    cyan = "\033[96m"
-    green = "\033[92m"
-    yellow = "\033[1;33m"
-    red = "\033[1;31m"
-    warn = "\033[93m"
-    end = "\033[0m"
+async def determine_prefix(bot, message):
+    return [f"<@{bot.user.id}>", f"<@!{bot.user.id}>"]
 
 
 class OMORPG(commands.AutoShardedBot):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.token = os.getenv("TOKEN")
-        self.mongo_url = os.getenv("DREAMER")
-        self.cluster = None
-        self.db = None
-        self.players = None
 
-        self.activity = discord.Game("OMORPG | 🔪 under construction")
-        self.E_LIST = ["cogs.utils", "cogs.information", "cogs.data", "cogs.game"]
+        # self.cluster: AsyncIOMotorClient         = None
+        # self.data: Union[None, data.DataManager] = None
+        # self.db                                  = None
+        # self.players                             = None
+
+        self.E_LIST                              = ["cogs.utils", "cogs.information", "cogs.data", "cogs.game"]
+        self.activity                            = discord.Game("OMORPG | 🔪 under construction")
+        self.log                                 = logging.getLogger("discord")
+        # self.mongo_url                           = os.getenv("DREAMER")
 
     async def setup_hook(self) -> None:
-
-        # sys.excepthook = self.exception_handler
         for filename in os.listdir("./cogs"):
             if os.path.isfile(os.path.join("./cogs/", filename)):
 
                 try:
                     if filename.endswith(".py"):
                         cog = f"cogs.{filename[:-3]}"
-                        _log.info(f"🔁 | {cog} has been loaded")
+                        self.log.info(f"{cog} has been loaded")
                         await self.load_extension(cog)
 
-                except Exception as e:
+                except ExtensionError:
                     print(f"Failed to load cog {filename}")
                     traceback.print_exc()
 
-        await self.tree.sync()
-        _log.info(f"✅ | Commands tree has been synced")
-        await self.database_connection()
+        # await self.tree.sync()
+        # self.log.info(f"Commands tree has been synced")
+
+        # await self.database_connection()
+
+        reload(data)
+        self.data = data.DataManager()
+        await self.load_extension("jishaku")
 
     async def database_connection(self):
         self.cluster = AsyncIOMotorClient(self.mongo_url)
         self.db = self.cluster["database"]
         self.players = self.db["players"]
-        _log.info("✅ | Database connection has been established")
 
-    @property
-    def data(self):
-        return self.get_cog("Data").instance
+        self.log.info("Database connection has been established")
 
 
-vessel = OMORPG(command_prefix=">", intents=intents, owner_ids=[1051383406598045696])
-vessel.run(vessel.token)
+OMORPG(
+    command_prefix=determine_prefix,
+    intents=discord.Intents.default(),
+    owner_ids=[1051383406598045696],
+    strip_after_prefix=True
+).run(token)

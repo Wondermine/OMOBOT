@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from functools import cached_property
+
 import typing
 
 
@@ -16,9 +18,12 @@ class Character:
     id: int
     name: str
     description: str
-    world: int
-    frame_image: str
-    skills: list
+    gender: str
+    age: int
+    birthday: str
+    BD_UNIX: int
+    location: str
+    image: str
 
 
 @dataclass
@@ -77,9 +82,9 @@ class DataManagerBase:
     items: typing.Dict[int, Item] = None
     skills: typing.Dict[int, Skill] = None
     characters: typing.Dict[int, Character] = None
+    
+    @cached_property
+    def list_characters(self):
+        return [character.name for character in self.characters.values()]
 
-    def all_enemies(self):
-        return self.enemies.values()
-
-    def all_items(self):
-        return self.items.values()
+    

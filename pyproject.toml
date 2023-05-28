@@ -10,7 +10,11 @@ python = "^3.11"
 discord = "^2.2.3"
 python-dotenv = "^1.0.0"
 motor = "^3.1.2"
+jishaku = {git = "https://github.com/Gorialis/jishaku"}
 
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.17.4"
 
 [build-system]
 requires = ["poetry-core"]

@@ -99,9 +99,36 @@ def get_enemies(instance):
         )
     return enemies
 
+def get_characters(instance):
+    characters_data = get_data_from("characters.csv")
+
+    characters = {}
+
+    for row in characters_data:
+        characters[row["id"]] = models.Character(
+            id=row["id"],
+            name=row["name"],
+            description=row["description"],
+            gender=row["gender"],
+            age=row["age"],
+            birthday=row["birthday"],
+            BD_UNIX=row["BD_UNIX"],
+            location=row["location"],
+            image=row["image"]
+        )
+    return characters
+
 
 class DataManager(models.DataManagerBase):
     def __init__(self):
         self.items = get_items(self)
         self.skills = get_skills(self)
         self.enemies = get_enemies(self)
+        self.characters = get_characters(self)
+
+    async def find_character_by_name(self, name: str):
+        for index in self.characters:
+            character = self.characters[index]
+            if character.name.lower() == name.lower():
+                return character
+        return None
