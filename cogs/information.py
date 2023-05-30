@@ -4,22 +4,24 @@ from discord.ext import commands
 
 from discord import app_commands
 
+from base import OMOBOT
+
 
 class Information(commands.Cog):
-    def __init__(self, bot: commands.AutoShardedBot):
+    def __init__(self, bot: OMOBOT):
         self.bot = bot
 
     @app_commands.command(name="info", description="Shows information about the bot")
     async def information_interaction(self, inter: discord.Interaction):
         embed = discord.Embed(
-            title="Project OMORPG",
+            title="Project OMOBOT",
             url="https://discord.gg/47vGg2zwPu",
             description="Coming soon...",
             color=discord.Color.from_rgb(255, 255, 255)
         )
 
         embed.set_thumbnail(
-            url="https://cdn.discordapp.com/icons/1101417305897979975/156cc6cbca7337f0d1afcf0e99ea9464.png?size=4096"
+            url=self.bot.user.display_avatar.url
         )
 
         embed.add_field(name="Lead Developer", value="LetsChill#2889", inline=True)
@@ -31,5 +33,5 @@ class Information(commands.Cog):
         await inter.response.send_message(embed=embed)
 
 
-async def setup(bot):
+async def setup(bot: OMOBOT):
     await bot.add_cog(Information(bot))

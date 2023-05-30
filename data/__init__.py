@@ -132,3 +132,10 @@ class DataManager(models.DataManagerBase):
             if character.name.lower() == name.lower():
                 return character
         return None
+
+    async def find_skill_by_name(self, name:str):
+        for index in self.skills:
+            skill = self.skills[index]
+            if skill.name.lower() == name.lower():
+                return skill
+        return None

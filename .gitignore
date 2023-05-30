@@ -1,5 +1,3 @@
-.env
-requirements.txt
 cogs/__pycache__/
 /.vscode/
 /.idea/

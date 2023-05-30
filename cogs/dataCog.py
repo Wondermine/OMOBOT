@@ -4,9 +4,11 @@ from discord.ext import commands
 
 import data
 
+from base import OMOBOT
+
 
 class Data(commands.Cog):
-    def __init__(self, bot: commands.AutoShardedBot):
+    def __init__(self, bot: OMOBOT):
         self.bot = bot
 
         reload(data)
@@ -14,5 +16,5 @@ class Data(commands.Cog):
         self.instance = data.DataManager()
 
 
-async def setup(bot: commands.AutoShardedBot):
+async def setup(bot: OMOBOT):
     await bot.add_cog(Data(bot))

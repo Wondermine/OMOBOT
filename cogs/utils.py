@@ -4,9 +4,11 @@ import time
 
 from discord import app_commands
 
+from base import OMOBOT
+
 
 class Utilities(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: OMOBOT):
         self.bot = bot
 
     @app_commands.command(
@@ -53,5 +55,5 @@ class Utilities(commands.Cog):
         )
 
 
-async def setup(bot):
+async def setup(bot: OMOBOT):
     await bot.add_cog(Utilities(bot))

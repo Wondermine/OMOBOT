@@ -46,8 +46,8 @@ class Skill:
     id: int
     name: str
     description: str
-    type: int
-    level: int
+    type: str
+    level: typing.Union[int, str]
     image: str
     juice: int
     character: int
