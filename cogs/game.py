@@ -55,7 +55,6 @@ class GameCommands(commands.Cog):
                 value=skill.level,
                 inline=False
             )
-
             embed.set_thumbnail(url=self.bot.data.characters[skill.character].image)
 
             if skill.image is None:
@@ -83,7 +82,10 @@ class GameCommands(commands.Cog):
 
         embed.add_field(name="Birthday", value=f"{character.birthday} <t:{character.BD_UNIX}:R>")
 
+        embed.add_field(name="Heart Rating", value="<:__:1113128435330588773>")
+
         await inter.response.send_message(embed=embed)
+
 
 async def setup(bot: OMOBOT):
     await bot.add_cog(GameCommands(bot))

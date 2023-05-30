@@ -30,6 +30,7 @@ class OMOBOT(commands.AutoShardedBot):
         self.log                                   = logging.getLogger("discord")
 
         self.cog_list                              = []
+        self.load_extension("jishaku")
 
     async def setup_hook(self) -> None:
         for filename in os.listdir("./cogs"):
