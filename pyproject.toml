@@ -11,6 +11,7 @@ discord = "^2.2.3"
 python-dotenv = "^1.0.0"
 motor = "^3.1.2"
 jishaku = {git = "https://github.com/Gorialis/jishaku"}
+pillow = "^9.5.0"
 
 
 [tool.poetry.group.dev.dependencies]
