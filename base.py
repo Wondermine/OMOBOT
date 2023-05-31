@@ -30,9 +30,9 @@ class OMOBOT(commands.AutoShardedBot):
         self.log                                   = logging.getLogger("discord")
 
         self.cog_list                              = []
-        self.load_extension("jishaku")
 
     async def setup_hook(self) -> None:
+        await self.load_extension("jishaku")
         for filename in os.listdir("./cogs"):
             if os.path.isfile(os.path.join("./cogs/", filename)):
 
@@ -46,4 +46,3 @@ class OMOBOT(commands.AutoShardedBot):
                 except ExtensionError:
                     self.log.error(f"Failed to load cog {filename}")
                     traceback.print_exc()
-

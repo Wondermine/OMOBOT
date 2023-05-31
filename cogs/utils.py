@@ -49,7 +49,7 @@ class Utilities(commands.Cog):
             value=f"{round(self.bot.latency * 1000) / 4} ms",
         )
         embed.set_footer(text=f"Executed by {inter.user.display_name}", icon_url=inter.user.avatar.url)
-        await msg.edit(
+        await inter.response.edit_message(
             content=f":ping_pong: {inter.user.mention}",
             embed=embed
         )
