@@ -144,3 +144,12 @@ class DataManager(models.DataManagerBase):
             if skill.name.lower() == name.lower():
                 return skill
         return None
+
+    async def find_skills_from_character(self, character: str):
+        skills = []
+        for index in self.skills:
+            skill = self.skills[index]
+            if skill.character.lower() == character.name.lower():
+                skills.append(skill)
+
+        return skills

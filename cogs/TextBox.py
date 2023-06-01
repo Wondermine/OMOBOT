@@ -17,22 +17,22 @@ from base64 import b64encode
 
 from time import time
 
+import enum
+
 from discord.app_commands import Choice
+class Characters(enum.Enum):
+    OMORI = "OMORI"
+    KEL = "KEL"
+    AUBREY = "AUBREY"
+    HERO = "HERO"
+    BASIL = "BASIL"
+    MARI = "MARI"
 
-characters = [
-        Choice(name='OMORI', value='OMORI'),
-        Choice(name='KEL', value='KEL'),
-        Choice(name='AUBREY', value='AUBREY'),
-        Choice(name='HERO', value='HERO'),
-        Choice(name='BASIL', value='BASIL'),
-        Choice(name='MARI', value='MARI'),
-    ]
+class Expressions(enum.Enum):
+    idle = "idle"
+    happy = "happy"
+    sad = "sad"
 
-expressions = [
-        Choice(name='idle', value='idle'),
-        Choice(name='happy', value='happy'),
-        Choice(name='sad', value='sad'),
-    ]
 
 def text_splitter(text: str):
 
@@ -77,7 +77,7 @@ def text_splitter(text: str):
 
 class TextBoxGenerator(
     GroupCog,
-    name="text_box",
+    name="text",
     description="Generates OMORI game themed textbox. Animated and static..."
 ):
     def __init__(self, bot: OMOBOT):
@@ -86,12 +86,15 @@ class TextBoxGenerator(
         self.base_path = "./data/assets/characters/"
 
     @app_commands.command(name="animated", description="Gives an animated (moving) text box with everything you need.")
+    @app_commands.describe(character='Choose a character', expression='Choose a an expression')
     @app_commands.checks.cooldown(1, 120.0)
-    @app_commands.choices(character=characters)
-    @app_commands.describe(character='Choose a character')
-    @app_commands.choices(expression=expressions)
-    @app_commands.describe(expression='Choose a an expression')
-    async def animated(self, inter: discord.Interaction, text: str, character: str, expression: str):
+    async def animated(
+            self,
+            inter: discord.Interaction,
+            text: str,
+            character: Characters,
+            expression: Expressions
+    ):
 
         if len(text) > 202:
             await inter.response.send_message("That is too much talkin'", ephemeral=True)
@@ -99,12 +102,18 @@ class TextBoxGenerator(
 
         if character == "OMORI":
             if expression != "idle":
-                await inter.response.send_message("OMORI doesn't have that expression, he only has an idle one...", ephemeral=True)
+                await inter.response.send_message(
+                    "OMORI doesn't have that expression, he only has an idle one...",
+                    ephemeral=True
+                )
                 return
 
         if character == "MARI":
             if expression == "sad":
-                await inter.response.send_message("MARI can never be sad it seems... she has a smug though", ephemeral=True)
+                await inter.response.send_message(
+                    "MARI can never be sad it seems... she has a smug though",
+                    ephemeral=True
+                )
                 return
 
         await inter.response.send_message("generating...", ephemeral=True)
@@ -176,11 +185,14 @@ class TextBoxGenerator(
         description="Gives a static (still) image of a text box with everything you need."
     )
     @app_commands.checks.cooldown(1, 80.0)
-    @app_commands.choices(character=characters)
-    @app_commands.describe(character='Choose a character')
-    @app_commands.choices(expression=expressions)
-    @app_commands.describe(expression='Choose a an expression')
-    async def static_generator(self, inter: discord.Interaction, text: str, character: str, expression: str):
+    @app_commands.describe(character='Choose a character', expression='Choose a an expression')
+    async def static_generator(
+            self,
+            inter: discord.Interaction,
+            text: str,
+            character: Characters,
+            expression: Expressions
+    ):
 
         if len(text) > 202:
             await inter.response.send_message("That is too much talkin'", ephemeral=True)

@@ -1,50 +1,50 @@
 id,name,description,character,level,image,juice,type
-0,SAD POEM,Inflicts SAD on a friend or foe,0,1,https://static.wikia.nocookie.net/omori/images/0/0b/Sad_Poem_%28Omori%29.gif,5,spell
-1,GUARD,"Acts first, reducing damage taken for 1 turn",0,1,null,0,defend
-2,STAB,Always deals a critical hit.\nIgnores DEFENSE when OMORI is sad,0,3,https://static.wikia.nocookie.net/omori/images/c/c4/Stab_%28Omori%29.gif,13,attack
-3,BREAD SLICE,"If this skill defeats a foe, gain BREAD",0,5,https://static.wikia.nocookie.net/omori/images/2/24/Bread_Slice_%28Omori%29.gif,10,attack
-4,MOCK,"Deals damage.\nIf the foe is ANGRY, greatly reduce its ATTACK",0,7,https://static.wikia.nocookie.net/omori/images/e/e4/Mock_%28Omori%29.gif,20,attack
-5,HACK AWAY,"Attacks 3 times, hitting random foes.",0,10,https://static.wikia.nocookie.net/omori/images/8/87/Hack_Away_%28Omori%29.gif,30,attack
-6,OBSERVE,Predicts who a foe will target next turn.,0,null,https://static.wikia.nocookie.net/omori/images/2/27/Observe_%28Omori%29.gif,0,spell
-7,LUCKY SLICE,"Acts first, An attack that’s stronger when OMORI is HAPPY.",0,12,https://static.wikia.nocookie.net/omori/images/9/99/Lucky_Slice_%28Omori%29.gif,15,attack
-8,TRICK,"Deals damage. If the foe is HAPPY, greatly reduce its SPEED",0,15,https://static.wikia.nocookie.net/omori/images/d/db/Trick_%28Omori%29.gif,20,attack
-9,PAINFUL TRUTH,Deals damage to a foe. OMORI and the foe become sad.,0,19,https://static.wikia.nocookie.net/omori/images/c/c5/Painful_Truth_%28Omori%29.gif,10,attack
-10,SHUN,"Deals damage. If the foe is SAD, greatly reduce its DEFENSE.",0,20,https://static.wikia.nocookie.net/omori/images/d/df/Shun_%28Omori%29.gif,20,attack
-11,STARE,Reduces all of a foe’s STATS.,0,25,https://static.wikia.nocookie.net/omori/images/5/51/Stare_%28Omori%29.gif,45,spell
-12,EXPLOIT,"Deals extra damage to a HAPPY, SAD, or ANGRY foe.",0,30,https://static.wikia.nocookie.net/omori/images/3/38/Attack_%28Solid%29.gif,30,attack
-13,FINAL STRIKE,"Strikes all foes, Deals more damage if OMORI has a higher stage of EMOTION.",0,50,https://static.wikia.nocookie.net/omori/images/7/7e/Final_Strike_%28Omori%29.gif,35,attack
-14,PEP TALK,Makes a friend or foe HAPPY,1,0,https://static.wikia.nocookie.net/omori/images/e/e9/Pep_Talk_%28Aubrey%29.gif,5,spell
-15,HEADBUTT,"Deals big damage, but AUBREY also takes damage up to 20% of her HEARTS. Stronger when AUBREY is ANGRY",1,null,null,5,attack
-16,COUNTER,"All foes target AUBREY for 1 turn, if AUBREY is attacked, she attacks.",1,6,https://static.wikia.nocookie.net/omori/images/b/bc/Attack_%28Aubrey%29.gif,5,attack
-17,TWIRL,AUBREY attacks a foe and becomes HAPPY.,1,10,https://static.wikia.nocookie.net/omori/images/5/59/Twirl_%28Aubrey%29.gif,10,attack
-18,TEAM SPIRIT,Makes AUBREY and a friend HAPPY,1,11,https://static.wikia.nocookie.net/omori/images/4/49/Team_Spirit_%28Aubrey%29.gif,10,spell
-19,POWER HIT,"An attack that ignores a foe’s DEFENSE, then reduces the foe’s DEFENSE by one tier",1,14,https://static.wikia.nocookie.net/omori/images/e/e5/Power_Hit_%28Aubrey%29.gif,20,attack
-20,MOOD WRECKER,"A swing that deosn’t miss, Deals extra damage to HAPPY foes.",1,17,https://static.wikia.nocookie.net/omori/images/a/a7/Mood_Wrecker_%28Aubrey%29.gif,10,attack
-21,WIND-UP THROW,Damages all foes. Deals more damage the less enemies there are,1,20,https://static.wikia.nocookie.net/omori/images/c/c6/Wind-Up_Throw_%28Aubrey%29.gif,20,attack
-22,MASH,"If this skill defeats a foe, recover 100% JUICE.",1,23,https://static.wikia.nocookie.net/omori/images/b/bc/Attack_%28Aubrey%29.gif,15,attack
-23,BEATDOWN,Attacks a foe 3 times.,1,27,https://static.wikia.nocookie.net/omori/images/f/f8/Beatdown_%28Aubrey%29.gif,30,attack
-24,LAST RESORT,"Deals damage based on AUBREY’s HEART, but AUBREY becomes TOAST.",1,30,https://static.wikia.nocookie.net/omori/images/5/56/Last_Resort_%28Aubrey%29.gif,50,attack
-25,ANNOY,Makes a friend or foe ANGRY,2,0,https://static.wikia.nocookie.net/omori/images/5/57/Annoy_%28Kel%29.gif,5,spell
-26,REBOUND,Deals damage to all foes.,2,4,https://static.wikia.nocookie.net/omori/images/b/be/Rebound_%28Kel%29.gif,15,attack
-27,RUN N GUN,KEL does an attack based on his SPEED instead of his ATTACK.,2,9,https://static.wikia.nocookie.net/omori/images/e/ef/Run_N%27_Gun_%28Kel%29.gif,15,attack
-28,CURVEBALL,Makes a foe feel a random EMOTION. Deals extra damage to foes with EMOTION.,2,10,https://static.wikia.nocookie.net/omori/images/d/dd/Curveball_%28Kel%29.gif,20,spell
-29,RICOCHET,"Deals damage to a foe 3 times, with a 30% damage variation.",2,16,https://static.wikia.nocookie.net/omori/images/4/43/Ricochet_%28Kel%29.gif,30,attack
-30,MEGAPHONE,Makes all friends ANGRY.,2,20,https://static.wikia.nocookie.net/omori/images/0/0e/Megaphone_%28Kel%29.gif,45,spell
-31,CAN’T CATCH ME,Attracts attention and reduces all foes HIT RATE by 55% for two turns.,2,21,null,50,spell
-32,RALLY,KEL becomes HAPPY. KEL’s friends recover some ENERGY and JUICE.,2,26,null,50,spell
-33,COMEBACK,"Makes KEL HAPPY. If SAD was removed, KEL gains FLEX.",2,29,null,25,spell
-34,TICKLE,All attacks on a foe will hit right in the HEART next turn.,2,30,null,55,spell
-35,FLEX,KEL deals more damage next turn by 2.5,2,null,https://static.wikia.nocookie.net/omori/images/f/f4/Flex_%28Kel%29.gif,10,spell
-36,JUICE ME,"Heals a lot of JUICE to a frined, but also hurts 25% of the friends’s current HEART. (Restores 40% MP)",2,null,https://static.wikia.nocookie.net/omori/images/3/38/Attack_%28Solid%29.gif,10,spell
-37,SNOWBALL,Makes a foe SAD. Also deals big damage to SAD foes.,2,null,https://static.wikia.nocookie.net/omori/images/9/91/Snowball_%28Kel%29.gif,20,attack
-38,COOK,Heals a friend for 75% of their HEART. Can be used outside of battle.,3,0,https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif,10,spell
-39,MASSAGE,Removes a friend or foe’s EMOTION.,3,2,https://static.wikia.nocookie.net/omori/images/3/39/Massage_%28Hero%29.gif,5,spell
-40,CHARM,"Acts first, a foe targets HERO for 1 turn.",3,8,null,10,spell
-41,SMILE,"Acts first, reducing a foe’s ATTACK",3,10,null,25,spell
-42,FAST FOOD,"Acts first, healing a friend for 40% of their HEART.",3,13,https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif,15,spell
-43,HOMEMADE JAM,Brings back a friend that is TOAST with 70% of their HEART.,3,16,null,40,spell
-44,CAPTIVATE,"Acts first, All foes target HERO for 1 turn.",3,20,null,20,spell
-45,ENCHANT,Acts first. A foe targets HERO for 1 turn and becomes HAPPY.,3,22,null,15,spell
-46,SHARE FOOD,HERO and a friend recover some HEART. (Heals 50% HP),3,24,https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif,15,spell
-47,MEZMERIZE,Acts first. All foes target HERO for 1 turn. HERO takes less damage by 50%.,3,28,null,35,spell
-48,DAZZLE,Acts first. Reduces all foe’s ATTACK and makes them HAPPY.,3,30,null,35,spell
+0,SAD POEM,Inflicts SAD on a friend or foe,OMORI,1,https://static.wikia.nocookie.net/omori/images/0/0b/Sad_Poem_%28Omori%29.gif,5,spell
+1,GUARD,"Acts first, reducing damage taken for 1 turn",OMORI,1,null,0,defend
+2,STAB,Always deals a critical hit.\nIgnores DEFENSE when OMORI is sad,OMORI,3,https://static.wikia.nocookie.net/omori/images/c/c4/Stab_%28Omori%29.gif,13,attack
+3,BREAD SLICE,"If this skill defeats a foe, gain BREAD",OMORI,5,https://static.wikia.nocookie.net/omori/images/2/24/Bread_Slice_%28Omori%29.gif,10,attack
+4,MOCK,"Deals damage.\nIf the foe is ANGRY, greatly reduce its ATTACK",OMORI,7,https://static.wikia.nocookie.net/omori/images/e/e4/Mock_%28Omori%29.gif,20,attack
+5,HACK AWAY,"Attacks 3 times, hitting random foes.",OMORI,10,https://static.wikia.nocookie.net/omori/images/8/87/Hack_Away_%28Omori%29.gif,30,attack
+6,OBSERVE,Predicts who a foe will target next turn.,OMORI,null,https://static.wikia.nocookie.net/omori/images/2/27/Observe_%28Omori%29.gif,0,spell
+7,LUCKY SLICE,"Acts first, An attack that’s stronger when OMORI is HAPPY.",OMORI,12,https://static.wikia.nocookie.net/omori/images/9/99/Lucky_Slice_%28Omori%29.gif,15,attack
+8,TRICK,"Deals damage. If the foe is HAPPY, greatly reduce its SPEED",OMORI,15,https://static.wikia.nocookie.net/omori/images/d/db/Trick_%28Omori%29.gif,20,attack
+9,PAINFUL TRUTH,Deals damage to a foe. OMORI and the foe become sad.,OMORI,19,https://static.wikia.nocookie.net/omori/images/c/c5/Painful_Truth_%28Omori%29.gif,10,attack
+10,SHUN,"Deals damage. If the foe is SAD, greatly reduce its DEFENSE.",OMORI,20,https://static.wikia.nocookie.net/omori/images/d/df/Shun_%28Omori%29.gif,20,attack
+11,STARE,Reduces all of a foe’s STATS.,OMORI,25,https://static.wikia.nocookie.net/omori/images/5/51/Stare_%28Omori%29.gif,45,spell
+12,EXPLOIT,"Deals extra damage to a HAPPY, SAD, or ANGRY foe.",OMORI,30,https://static.wikia.nocookie.net/omori/images/3/38/Attack_%28Solid%29.gif,30,attack
+13,FINAL STRIKE,"Strikes all foes, Deals more damage if OMORI has a higher stage of EMOTION.",OMORI,50,https://static.wikia.nocookie.net/omori/images/7/7e/Final_Strike_%28Omori%29.gif,35,attack
+14,PEP TALK,Makes a friend or foe HAPPY,AUBREY,0,https://static.wikia.nocookie.net/omori/images/e/e9/Pep_Talk_%28Aubrey%29.gif,5,spell
+15,HEADBUTT,"Deals big damage, but AUBREY also takes damage up to 20% of her HEARTS. Stronger when AUBREY is ANGRY",AUBREY,null,null,5,attack
+16,COUNTER,"All foes target AUBREY for 1 turn, if AUBREY is attacked, she attacks.",AUBREY,6,https://static.wikia.nocookie.net/omori/images/b/bc/Attack_%28Aubrey%29.gif,5,attack
+17,TWIRL,AUBREY attacks a foe and becomes HAPPY.,AUBREY,10,https://static.wikia.nocookie.net/omori/images/5/59/Twirl_%28Aubrey%29.gif,10,attack
+18,TEAM SPIRIT,Makes AUBREY and a friend HAPPY,AUBREY,11,https://static.wikia.nocookie.net/omori/images/4/49/Team_Spirit_%28Aubrey%29.gif,10,spell
+19,POWER HIT,"An attack that ignores a foe’s DEFENSE, then reduces the foe’s DEFENSE by one tier",AUBREY,14,https://static.wikia.nocookie.net/omori/images/e/e5/Power_Hit_%28Aubrey%29.gif,20,attack
+20,MOOD WRECKER,"A swing that deosn’t miss, Deals extra damage to HAPPY foes.",AUBREY,17,https://static.wikia.nocookie.net/omori/images/a/a7/Mood_Wrecker_%28Aubrey%29.gif,10,attack
+21,WIND-UP THROW,Damages all foes. Deals more damage the less enemies there are,AUBREY,20,https://static.wikia.nocookie.net/omori/images/c/c6/Wind-Up_Throw_%28Aubrey%29.gif,20,attack
+22,MASH,"If this skill defeats a foe, recover 100% JUICE.",AUBREY,23,https://static.wikia.nocookie.net/omori/images/b/bc/Attack_%28Aubrey%29.gif,15,attack
+23,BEATDOWN,Attacks a foe 3 times.,AUBREY,27,https://static.wikia.nocookie.net/omori/images/f/f8/Beatdown_%28Aubrey%29.gif,30,attack
+24,LAST RESORT,"Deals damage based on AUBREY’s HEART, but AUBREY becomes TOAST.",AUBREY,30,https://static.wikia.nocookie.net/omori/images/5/56/Last_Resort_%28Aubrey%29.gif,50,attack
+25,ANNOY,Makes a friend or foe ANGRY,KEL,0,https://static.wikia.nocookie.net/omori/images/5/57/Annoy_%28Kel%29.gif,5,spell
+26,REBOUND,Deals damage to all foes.,KEL,4,https://static.wikia.nocookie.net/omori/images/b/be/Rebound_%28Kel%29.gif,15,attack
+27,RUN N GUN,KEL does an attack based on his SPEED instead of his ATTACK.,KEL,9,https://static.wikia.nocookie.net/omori/images/e/ef/Run_N%27_Gun_%28Kel%29.gif,15,attack
+28,CURVEBALL,Makes a foe feel a random EMOTION. Deals extra damage to foes with EMOTION.,KEL,10,https://static.wikia.nocookie.net/omori/images/d/dd/Curveball_%28Kel%29.gif,20,spell
+29,RICOCHET,"Deals damage to a foe 3 times, with a 30% damage variation.",KEL,16,https://static.wikia.nocookie.net/omori/images/4/43/Ricochet_%28Kel%29.gif,30,attack
+30,MEGAPHONE,Makes all friends ANGRY.,KEL,20,https://static.wikia.nocookie.net/omori/images/0/0e/Megaphone_%28Kel%29.gif,45,spell
+31,CAN’T CATCH ME,Attracts attention and reduces all foes HIT RATE by 55% for two turns.,KEL,21,null,50,spell
+32,RALLY,KEL becomes HAPPY. KEL’s friends recover some ENERGY and JUICE.,KEL,26,null,50,spell
+33,COMEBACK,"Makes KEL HAPPY. If SAD was removed, KEL gains FLEX.",KEL,29,null,25,spell
+34,TICKLE,All attacks on a foe will hit right in the HEART next turn.,KEL,30,null,55,spell
+35,FLEX,KEL deals more damage next turn by 2.5,KEL,null,https://static.wikia.nocookie.net/omori/images/f/f4/Flex_%28Kel%29.gif,10,spell
+36,JUICE ME,"Heals a lot of JUICE to a frined, but also hurts 25% of the friends’s current HEART. (Restores 40% MP)",KEL,null,https://static.wikia.nocookie.net/omori/images/3/38/Attack_%28Solid%29.gif,10,spell
+37,SNOWBALL,Makes a foe SAD. Also deals big damage to SAD foes.,KEL,null,https://static.wikia.nocookie.net/omori/images/9/91/Snowball_%28Kel%29.gif,20,attack
+38,COOK,Heals a friend for 75% of their HEART. Can be used outside of battle.,HERO,0,https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif,10,spell
+39,MASSAGE,Removes a friend or foe’s EMOTION.,HERO,2,https://static.wikia.nocookie.net/omori/images/3/39/Massage_%28Hero%29.gif,5,spell
+40,CHARM,"Acts first, a foe targets HERO for 1 turn.",HERO,8,null,10,spell
+41,SMILE,"Acts first, reducing a foe’s ATTACK",HERO,10,null,25,spell
+42,FAST FOOD,"Acts first, healing a friend for 40% of their HEART.",HERO,13,https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif,15,spell
+43,HOMEMADE JAM,Brings back a friend that is TOAST with 70% of their HEART.,HERO,16,null,40,spell
+44,CAPTIVATE,"Acts first, All foes target HERO for 1 turn.",HERO,20,null,20,spell
+45,ENCHANT,Acts first. A foe targets HERO for 1 turn and becomes HAPPY.,HERO,22,null,15,spell
+46,SHARE FOOD,HERO and a friend recover some HEART. (Heals 50% HP),HERO,24,https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif,15,spell
+47,MEZMERIZE,Acts first. All foes target HERO for 1 turn. HERO takes less damage by 50%.,HERO,28,null,35,spell
+48,DAZZLE,Acts first. Reduces all foe’s ATTACK and makes them HAPPY.,HERO,30,null,35,spell
