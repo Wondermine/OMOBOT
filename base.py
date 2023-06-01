@@ -27,7 +27,7 @@ class OMOBOT(commands.AutoShardedBot):
 
         self.data: data.DataManager                = DataManager()
 
-        self.activity                              = discord.Game("OMOBOT | 🔪 under construction")
+        self.activity                              = discord.Game("OMOBOT | 🔪 check it out")
         self.log                                   = logging.getLogger("discord")
 
         self.cog_list                              = []

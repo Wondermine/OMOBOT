@@ -150,7 +150,7 @@ class SkillCommand(
             character_obj = await self.bot.data.find_character_by_name(character.value)
             embed.set_thumbnail(url=character_obj.image)
 
-            skills = await self.bot.data.find_skills_from_character(character)
+            skills = await self.bot.data.find_skills_from_character(character.value)
 
             if len(skills) == 0:
                 await inter.response.send_message("This character has no skills...", ephemeral=True)

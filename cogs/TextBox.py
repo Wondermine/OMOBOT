@@ -100,7 +100,7 @@ class TextBoxGenerator(
             await inter.response.send_message("That is too much talkin'", ephemeral=True)
             return
 
-        if character == "OMORI":
+        if character.value == "OMORI":
             if expression != "idle":
                 await inter.response.send_message(
                     "OMORI doesn't have that expression, he only has an idle one...",
@@ -108,7 +108,7 @@ class TextBoxGenerator(
                 )
                 return
 
-        if character == "MARI":
+        if character.value == "MARI":
             if expression == "sad":
                 await inter.response.send_message(
                     "MARI can never be sad it seems... she has a smug though",
@@ -121,7 +121,7 @@ class TextBoxGenerator(
         texts = text_splitter(text)
 
         prev_im = Image.open("./data/assets/base/input.png")
-        portrait = Image.open(self.base_path + character + f"/{expression}0.png")
+        portrait = Image.open(self.base_path + character.value + f"/{expression}0.png")
 
         gif = []
 
@@ -147,7 +147,7 @@ class TextBoxGenerator(
                 d = ImageDraw.Draw(temp_im)
 
                 while checks:
-                    d.text((12, 76), character, font=self.base_font, fill=(255, 255, 255))
+                    d.text((12, 76), character.value, font=self.base_font, fill=(255, 255, 255))
                     temp_im.paste(portrait, (498, 4), portrait)
                     checks = False
 
@@ -203,7 +203,7 @@ class TextBoxGenerator(
         texts = text_splitter(text)
 
         image = Image.open("./data/assets/base/input.png")
-        portrait = Image.open(self.base_path + character + f"/{expression}0.png")
+        portrait = Image.open(self.base_path + character.value + f"/{expression}0.png")
 
         d = ImageDraw.Draw(image)
 
@@ -220,7 +220,7 @@ class TextBoxGenerator(
 
             d.text((10, y), index, font=self.base_font, fill=(255, 255, 255))
 
-        d.text((12, 76), character, font=self.base_font, fill=(255, 255, 255))
+        d.text((12, 76), character.value, font=self.base_font, fill=(255, 255, 255))
         image.paste(portrait, (498, 4), portrait)
 
         arr = io.BytesIO()
