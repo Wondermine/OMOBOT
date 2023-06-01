@@ -12,6 +12,7 @@ class GameCommands(commands.Cog):
     def __init__(self, bot: OMOBOT):
         self.bot = bot
 
+    @app_commands.checks.cooldown(1, 20.0)
     @app_commands.command(name="skills", description="Show you details about OMORI skills in-game")
     async def skills(self, inter: discord.Interaction, name: Optional[str]):
         embed = discord.Embed(
@@ -64,6 +65,7 @@ class GameCommands(commands.Cog):
 
         await inter.response.send_message(embed=embed)
 
+    @app_commands.checks.cooldown(1, 20.0)
     @app_commands.command(name="characters", description="Shows the OMORI game characters information.")
     async def characters(self, inter: discord.Interaction, name: str = None):
         

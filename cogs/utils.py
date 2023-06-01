@@ -11,6 +11,7 @@ class Utilities(commands.Cog):
     def __init__(self, bot: OMOBOT):
         self.bot = bot
 
+    @app_commands.checks.cooldown(1, 30.0)
     @app_commands.command(
         name="ping",
         description="Shows the information about the discord latency and how fast the bot can respond!"

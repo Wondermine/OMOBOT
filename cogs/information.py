@@ -11,6 +11,7 @@ class Information(commands.Cog):
     def __init__(self, bot: OMOBOT):
         self.bot = bot
 
+    @app_commands.checks.cooldown(1, 30.0)
     @app_commands.command(name="info", description="Shows information about the bot")
     async def information_interaction(self, inter: discord.Interaction):
         embed = discord.Embed(
