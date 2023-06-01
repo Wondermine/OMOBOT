@@ -6,7 +6,7 @@ from discord.ext import commands
 import traceback
 import logging
 import discord
-import data
+from data import DataManager
 import os
 
 
@@ -24,12 +24,14 @@ class OMOBOT(commands.AutoShardedBot):
         self.db: AsyncIOMotorDatabase              = self.cluster["database"]
         self.players: AsyncIOMotorDatabase         = self.db["players"]
 
-        self.data: data.DataManager                = data.DataManager()
+        self.data: data.DataManager                = DataManager()
 
         self.activity                              = discord.Game("OMOBOT | 🔪 under construction")
         self.log                                   = logging.getLogger("discord")
 
         self.cog_list                              = []
+
+        self.help_command = None
 
     async def setup_hook(self) -> None:
         await self.load_extension("jishaku")

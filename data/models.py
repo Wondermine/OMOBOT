@@ -4,6 +4,8 @@ from functools import cached_property
 
 import typing
 
+BASE_PATH = "./data/assets/characters/"
+
 
 class UnregisteredDataManager:
     pass
@@ -24,6 +26,9 @@ class Character:
     BD_UNIX: int
     location: str
     image: str
+
+    def __post_init__(self):
+        print(f"{self.name} has been created")
 
 
 @dataclass
@@ -54,6 +59,9 @@ class Skill:
 
     instance: typing.Any = UnregisteredDataManager()
 
+    def __str__(self):
+        return self.name
+
 
 @dataclass
 class Enemy:
@@ -75,6 +83,10 @@ class Enemy:
     skills: list
 
     instance: typing.Any = UnregisteredDataManager()
+
+    def __str__(self):
+        return self.name
+
 
 @dataclass
 class DataManagerBase:

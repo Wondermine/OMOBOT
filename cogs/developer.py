@@ -12,6 +12,7 @@ class DeveloperTools(commands.Cog):
         self.bot = bot
 
     @commands.command()
+    @commands.is_owner()
     async def reload(self, ctx: commands.Context):
         msg = await ctx.send("Reloading...")
         self.bot.cog_list = []

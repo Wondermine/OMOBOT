@@ -82,8 +82,6 @@ class GameCommands(commands.Cog):
 
         embed.add_field(name="Birthday", value=f"{character.birthday} <t:{character.BD_UNIX}:R>")
 
-        embed.add_field(name="Heart Rating", value="<:__:1113128435330588773>")
-
         await inter.response.send_message(embed=embed)
 
 

@@ -1,3 +1,6 @@
+import discord
+from discord import Interaction
+from discord.app_commands import AppCommandError, CommandOnCooldown
 import os
 from base import OMOBOT
 
@@ -7,4 +10,16 @@ def determine_prefix(bot, message):
 
 
 if __name__ == "__main__":
-    OMOBOT(command_prefix=determine_prefix).run(os.getenv("TOKEN"))
+    omobot_base = OMOBOT(command_prefix=determine_prefix)
+
+    tree = omobot_base.tree
+
+    @tree.error
+    async def on_app_command_error(inter: Interaction, error: AppCommandError):
+        if isinstance(error, CommandOnCooldown):
+            await inter.response.send_message(str(error), ephemeral=True)
+            return
+
+        raise error
+
+    omobot_base.run(os.getenv("TOKEN"))

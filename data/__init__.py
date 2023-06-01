@@ -1,10 +1,17 @@
 # from dataclasses import dataclass
+import typing
 
+from data import models
 from . import models
 
 import csv
 
 from pathlib import Path
+
+from .models import Character
+
+
+BASE_PATH = "./data/assets/characters/"
 
 
 def isnumber(v):
@@ -20,12 +27,12 @@ def get_data_from(filename):
 
     with open(path) as f:
         reader = csv.DictReader(f)
-        data = list(
+        raw_data = list(
             {k: int(v) if isnumber(v) else v for k, v in row.items() if v != ""}
             for row in reader
         )
 
-    return data
+    return raw_data
 
 
 def get_items(instance):
@@ -99,6 +106,7 @@ def get_enemies(instance):
         )
     return enemies
 
+
 def get_characters(instance):
     characters_data = get_data_from("characters.csv")
 
@@ -116,6 +124,8 @@ def get_characters(instance):
             location=row["location"],
             image=row["image"]
         )
+        characters[row["id"]].idle = BASE_PATH + characters[row["id"]].name.capitalize() + "/idle.png"
+
     return characters
 
 
@@ -126,14 +136,14 @@ class DataManager(models.DataManagerBase):
         self.enemies = get_enemies(self)
         self.characters = get_characters(self)
 
-    async def find_character_by_name(self, name: str):
+    async def find_character_by_name(self, name: str) -> Character | None:
         for index in self.characters:
             character = self.characters[index]
             if character.name.lower() == name.lower():
                 return character
         return None
 
-    async def find_skill_by_name(self, name:str):
+    async def find_skill_by_name(self, name: str):
         for index in self.skills:
             skill = self.skills[index]
             if skill.name.lower() == name.lower():
