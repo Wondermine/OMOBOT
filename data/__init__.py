@@ -10,10 +10,6 @@ from pathlib import Path
 
 from .models import Character
 
-
-BASE_PATH = "./data/assets/characters/"
-
-
 def isnumber(v):
     try:
         int(v)
@@ -124,7 +120,6 @@ def get_characters(instance):
             location=row["location"],
             image=row["image"]
         )
-        characters[row["id"]].idle = BASE_PATH + characters[row["id"]].name.upper() + "/idle.png"
 
     return characters
 
