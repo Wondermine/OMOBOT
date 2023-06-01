@@ -124,7 +124,7 @@ def get_characters(instance):
             location=row["location"],
             image=row["image"]
         )
-        characters[row["id"]].idle = BASE_PATH + characters[row["id"]].name.capitalize() + "/idle.png"
+        characters[row["id"]].idle = BASE_PATH + characters[row["id"]].name.upper() + "/idle.png"
 
     return characters
 
