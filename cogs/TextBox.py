@@ -48,13 +48,13 @@ def text_splitter(text: str):
 
     for word in text_listed:
 
-        if char_count in [60, 61, 62, 63, 64, 65, 66, 67]:
+        if char_count in [57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67]:
             destination = 1
             texts_list[1].append(word)
             char_count += len(word) + 1
             continue
 
-        if char_count in [123, 124, 125, 126, 127, 128, 129, 130, 131]:
+        if char_count in [120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131]:
             destination = 2
             texts_list[2].append(word)
             char_count += len(word) + 1
