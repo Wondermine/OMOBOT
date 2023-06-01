@@ -109,7 +109,7 @@ class TextBoxGenerator(
                 return
 
         if character.value == "MARI":
-            if expression == "sad":
+            if expression.value == "sad":
                 await inter.response.send_message(
                     "MARI can never be sad it seems... she has a smug though",
                     ephemeral=True
@@ -121,7 +121,7 @@ class TextBoxGenerator(
         texts = text_splitter(text)
 
         prev_im = Image.open("./data/assets/base/input.png")
-        portrait = Image.open(self.base_path + character.value + f"/{expression}0.png")
+        portrait = Image.open(self.base_path + character.value + f"/{expression.value}0.png")
 
         gif = []
 
@@ -203,7 +203,7 @@ class TextBoxGenerator(
         texts = text_splitter(text)
 
         image = Image.open("./data/assets/base/input.png")
-        portrait = Image.open(self.base_path + character.value + f"/{expression}0.png")
+        portrait = Image.open(self.base_path + character.value + f"/{expression.value}0.png")
 
         d = ImageDraw.Draw(image)
 
