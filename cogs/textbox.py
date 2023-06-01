@@ -75,7 +75,6 @@ def text_splitter(text: str):
     return [text1, text2, text3]
 
 
-@app_commands.guilds(discord.Object(id=1101417305897979975))
 class TextBoxGenerator(
     GroupCog,
     name="text_box",
