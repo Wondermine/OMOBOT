@@ -149,7 +149,7 @@ class DataManager(models.DataManagerBase):
         skills = []
         for index in self.skills:
             skill = self.skills[index]
-            if skill.character.lower() == character.name.lower():
+            if skill.character.lower() == character.lower():
                 skills.append(skill)
 
         return skills
