@@ -16,4 +16,4 @@ RUN poetry install
 
 RUN ls
 
-CMD ["python3", "-m", "./bot"]
+CMD ["python3", "-m", "/bot"]
