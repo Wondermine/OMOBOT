@@ -1,25 +1,18 @@
 import discord
-from discord import ui
 
 from discord.ext.commands import GroupCog
 
 from discord import app_commands
 
-from base import OMOBOT
+from bot.bot import OMOBOT
 
 import io
 
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageSequence
-
-from typing import Optional
-
-from base64 import b64encode
-
-from time import time
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 import enum
 
-from discord.app_commands import Choice
+
 class Characters(enum.Enum):
     OMORI = "OMORI"
     KEL = "KEL"
@@ -27,6 +20,7 @@ class Characters(enum.Enum):
     HERO = "HERO"
     BASIL = "BASIL"
     MARI = "MARI"
+
 
 class Expressions(enum.Enum):
     idle = "idle"
@@ -75,6 +69,7 @@ def text_splitter(text: str):
     return [text1, text2, text3]
 
 
+# noinspection PyUnresolvedReferences
 class TextBoxGenerator(
     GroupCog,
     name="text",
@@ -101,7 +96,7 @@ class TextBoxGenerator(
             return
 
         if character.value == "OMORI":
-            if expression != "idle":
+            if expression.value != "idle":
                 await inter.response.send_message(
                     "OMORI doesn't have that expression, he only has an idle one...",
                     ephemeral=True
@@ -147,6 +142,16 @@ class TextBoxGenerator(
                 d = ImageDraw.Draw(temp_im)
 
                 while checks:
+                    size = d.textlength(character.value, font=self.base_font)
+
+                    x_axis = size + 25
+
+                    d.rectangle((0, 70, x_axis, 114), fill=(255, 255, 255), width=1, outline=(0, 0, 0))
+
+                    # 4 pixels difference
+
+                    d.rectangle((4, 74, x_axis - 4, 110), fill=(0, 0, 0), width=1)
+
                     d.text((12, 76), character.value, font=self.base_font, fill=(255, 255, 255))
                     temp_im.paste(portrait, (498, 4), portrait)
                     checks = False
@@ -184,7 +189,7 @@ class TextBoxGenerator(
         name="static",
         description="Gives a static (still) image of a text box with everything you need."
     )
-    @app_commands.checks.cooldown(1, 80.0)
+    @app_commands.checks.cooldown(1, 20.0)
     @app_commands.describe(character='Choose a character', expression='Choose a an expression')
     async def static_generator(
             self,
@@ -206,6 +211,15 @@ class TextBoxGenerator(
         portrait = Image.open(self.base_path + character.value + f"/{expression.value}0.png")
 
         d = ImageDraw.Draw(image)
+
+        # name space rectangle
+        size = d.textlength(character.value, font=self.base_font)
+
+        x_axis = size + 25
+
+        d.rectangle((0, 70, x_axis, 114), fill=(255, 255, 255), width=1, outline=(0, 0, 0))
+
+        d.rectangle((4, 74, (x_axis - 4), 110), fill=(0, 0, 0), width=1)
 
         y = 130
         count = -1

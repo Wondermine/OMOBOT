@@ -1,20 +1,17 @@
-import enum
-
 from discord import app_commands
-from discord.ext import commands
 from discord.ext.commands import GroupCog
-from discord.app_commands import Choice
 
 from discord.ui import View
 
 import discord
 
 import enum
-from typing import Optional, Union
+from typing import (Optional, Union)
 
-from base import OMOBOT
+from bot.bot import OMOBOT
 
 
+# noinspection PyUnresolvedReferences
 class Paginator(View):
 
     def __init__(self, **kwargs):
@@ -26,6 +23,7 @@ class Paginator(View):
 
     @discord.ui.button(label="<")
     async def less(self, inter: discord.Interaction, button: discord.Button):
+        await inter.response.defer()
         if self.user.id != self.user.id:
             await inter.response.send_message("That is not yours?", ephemeral=True)
             return
@@ -34,7 +32,6 @@ class Paginator(View):
             return
 
         self.page -= 1
-        await inter.response.defer()
         await inter.message.edit(embed=self.pages[self.page - 1])
 
     @discord.ui.button(label="End Interaction", style=discord.ButtonStyle.red)
@@ -42,8 +39,6 @@ class Paginator(View):
         if self.user.id != self.user.id:
             await inter.response.send_message("That is not yours?", ephemeral=True)
             return
-
-        await inter.response.send_message("Interaction ended", ephemeral=True)
 
         action = inter.message.components[0]
 
@@ -61,10 +56,13 @@ class Paginator(View):
 
         await inter.message.edit(view=view)
 
+        await inter.response.defer()
+
         self.stop()
 
     @discord.ui.button(label=">")
     async def more(self, inter: discord.Interaction, button: discord.Button):
+        await inter.response.defer()
         if self.user.id != self.user.id:
             await inter.response.send_message("That is not yours?", ephemeral=True)
             return
@@ -74,7 +72,6 @@ class Paginator(View):
             return
 
         self.page += 1
-        await inter.response.defer()
         await inter.message.edit(embed=self.pages[self.page - 1])
 
 
@@ -87,6 +84,7 @@ class Characters(enum.Enum):
     MARI = "MARI"
 
 
+# noinspection PyUnresolvedReferences
 class SkillCommand(
     GroupCog,
     name="skills",
@@ -104,7 +102,7 @@ class SkillCommand(
 
         skill = await self.bot.data.find_skill_by_name(name)
 
-        embed = discord.Embed(
+        embed = self.bot.Embed(
             title="OMORI skills"
         )
 
@@ -118,11 +116,16 @@ class SkillCommand(
 
         character = await self.bot.data.find_character_by_name(skill.character)
 
-        embed.description = skill.description
-
-        embed.add_field(name="character", value=skill.character)
-
-        embed.add_field(name="juice", value=f"{skill.juice} <:__:1112092849748594719>")
+        embed.description = (
+            f"🔷 | **Name:** `{skill}`\n"
+            f"🔷 | **Character:** `{skill.character}`\n"
+            f"🔷 | **Juice:** `{skill.juice}` <:__:1112092849748594719>\n"
+            f"🔷 | **Description:**\n"
+            "```yml\n"
+            f"{skill.description}\n"
+            "```\n"
+            "🔷 | **Image:**"
+        )
 
         embed.set_thumbnail(url=character.image)
 
@@ -139,10 +142,10 @@ class SkillCommand(
     )
     @app_commands.describe(character="Choose a character to display their skills.")
     async def list(self, inter: discord.Interaction, character: Optional[Characters]):
+        skill_count = 0
 
         if character is not None:
-
-            embed = discord.Embed(
+            embed = self.bot.Embed(
                 title="OMORI game skills"
             )
 
@@ -157,7 +160,21 @@ class SkillCommand(
                 return
 
             for skill in skills:
-                embed.add_field(name=skill, value=skill.description)
+                skill_count += 1
+                embed.add_field(
+                    name=f"{skill_count}. {skill}",
+                    value=(
+                        "```yml\n"
+                        f"{skill.description}"
+                        "```"
+                    )
+                    , inline=False
+                )
+
+            embed.set_footer(
+                text=f"Skills of {character}. {skill_count} in total",
+                icon_url=self.bot.user.display_avatar.url
+            )
 
             await inter.response.send_message(embed=embed)
             return
@@ -166,11 +183,13 @@ class SkillCommand(
 
         skill_count = 0
 
+        total_skills = 0
+
         pages = []
 
         skills_per_page = round(len(skills) / 5)
 
-        embed = discord.Embed(
+        embed = self.bot.Embed(
             title="Game skills",
             description=f"A list of all OMORI skills that exist.\nA total of **{len(skills)}** exist."
         )
@@ -179,16 +198,21 @@ class SkillCommand(
         view = Paginator(timeout=None)
 
         for index in skills:
-            embed.add_field(name=skills[index].name, value=skills[index].description)
+            total_skills += 1
+            embed.add_field(
+                name=f"{total_skills}. {skills[index].name}",
+                value=f"`{skills[index].description}`",
+                inline=False
+            )
 
             skill_count += 1
 
             if skill_count == skills_per_page:
                 pages.append(embed)
                 skill_count = 0
-                embed = discord.Embed(
+                embed = self.bot.Embed(
                     title="Game skills",
-                    description=f"A list of all OMORI skills that exist.\nA total of **{len(skills)}** exist."
+                    description=f"A list of all `OMORI` skills that exist.\nA total of **{len(skills)}** exist."
                 )
                 embed.set_footer(text=f"Page {len(pages) + 1}", icon_url=inter.user.avatar.url)
 

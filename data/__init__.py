@@ -1,14 +1,13 @@
-# from dataclasses import dataclass
-import typing
-
 from data import models
 from . import models
 
 import csv
+import json
 
 from pathlib import Path
 
 from .models import Character
+
 
 def isnumber(v):
     try:
@@ -16,7 +15,6 @@ def isnumber(v):
     except ValueError:
         return False
     return True
-
 
 def get_data_from(filename):
     path = Path(__file__).parent / "csv" / filename
@@ -29,6 +27,15 @@ def get_data_from(filename):
         )
 
     return raw_data
+
+
+def get_data_from_json(filename):
+    path = Path(__file__).parent / "json" / filename
+
+    with open(path) as f:
+        raw_data = json.loads(f.read())
+
+        return raw_data
 
 
 def get_items(instance):
@@ -50,27 +57,24 @@ def get_items(instance):
 
 
 def get_skills(instance):
-    skills_data = get_data_from("skills.csv")
+    data = get_data_from_json("skills.json")
 
     skills = {}
 
-    for row in skills_data:
-        skill = models.Skill(
-            id=row["id"],
-            name=row["name"],
-            description=row["description"],
-            type=row["type"],
-            level=row["level"],
-            juice=row["juice"],
-            image=row["image"],
-            character=row["character"],
+    for skill_name in data["DreamWorld"]:
+        skill_obj = data["DreamWorld"][skill_name]
+
+        skills[skill_name] = models.Skill(
+            id=skill_obj["id"],
+            name=skill_obj["name"],
+            description=skill_obj["description"],
+            type=skill_obj["type"],
+            level=skill_obj["level"],
+            juice=skill_obj["juice"],
+            image=skill_obj["image"],
+            character=skill_obj["character"],
             instance=instance
         )
-
-        if row["image"] == "null":
-            skill.image = None
-
-        skills[row["id"]] = skill
 
     return skills
 
@@ -104,21 +108,26 @@ def get_enemies(instance):
 
 
 def get_characters(instance):
-    characters_data = get_data_from("characters.csv")
+    data = get_data_from_json("characters.json")
 
     characters = {}
 
-    for row in characters_data:
-        characters[row["id"]] = models.Character(
-            id=row["id"],
-            name=row["name"],
-            description=row["description"],
-            gender=row["gender"],
-            age=row["age"],
-            birthday=row["birthday"],
-            BD_UNIX=row["BD_UNIX"],
-            location=row["location"],
-            image=row["image"]
+    for character_name in data["DreamWorld"]:
+
+        character = data["DreamWorld"][character_name]
+
+
+        characters[character["id"]] = models.Character(
+            id=character["id"],
+            name=character["name"],
+            description=character["description"],
+            gender=character["gender"],
+            age=character["age"],
+            birthday=character["birthday"],
+            BD_UNIX=character["BD_UNIX"],
+            location=character["location"],
+            image=character["image"],
+            instance=instance
         )
 
     return characters
@@ -149,7 +158,7 @@ class DataManager(models.DataManagerBase):
         skills = []
         for index in self.skills:
             skill = self.skills[index]
-            if skill.character.lower() == character.name.lower():
+            if skill.character.lower() == character.lower():
                 skills.append(skill)
 
         return skills

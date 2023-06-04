@@ -1,0 +1,494 @@
+{
+    "DreamWorld": {
+        "SAD POEM": {
+            "id": 0,
+            "name": "SAD POEM",
+            "description": "Inflicts SAD on a friend or foe",
+            "type": "spell",
+            "level": 1,
+            "juice": 5,
+            "image": "https://static.wikia.nocookie.net/omori/images/0/0b/Sad_Poem_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "GUARD": {
+            "id": 1,
+            "name": "GUARD",
+            "description": "Acts first, reducing damage taken for 1 turn",
+            "type": "defend",
+            "level": 1,
+            "juice": 0,
+            "image": "null",
+            "character": "OMORI"
+        },
+        "STAB": {
+            "id": 2,
+            "name": "STAB",
+            "description": "Always deals a critical hit.\nIgnores DEFENSE when OMORI is sad",
+            "type": "attack",
+            "level": 3,
+            "juice": 13,
+            "image": "https://static.wikia.nocookie.net/omori/images/c/c4/Stab_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "BREAD SLICE": {
+            "id": 3,
+            "name": "BREAD SLICE",
+            "description": "If this skill defeats a foe, gain BREAD",
+            "type": "attack",
+            "level": 5,
+            "juice": 10,
+            "image": "https://static.wikia.nocookie.net/omori/images/2/24/Bread_Slice_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "MOCK": {
+            "id": 4,
+            "name": "MOCK",
+            "description": "Deals damage.\nIf the foe is ANGRY, greatly reduce its ATTACK",
+            "type": "attack",
+            "level": 7,
+            "juice": 20,
+            "image": "https://static.wikia.nocookie.net/omori/images/e/e4/Mock_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "HACK AWAY": {
+            "id": 5,
+            "name": "HACK AWAY",
+            "description": "Attacks 3 times, hitting random foes.",
+            "type": "attack",
+            "level": 10,
+            "juice": 30,
+            "image": "https://static.wikia.nocookie.net/omori/images/8/87/Hack_Away_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "OBSERVE": {
+            "id": 6,
+            "name": "OBSERVE",
+            "description": "Predicts who a foe will target next turn.",
+            "type": "spell",
+            "level": null,
+            "juice": 0,
+            "image": "https://static.wikia.nocookie.net/omori/images/2/27/Observe_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "LUCKY SLICE": {
+            "id": 7,
+            "name": "LUCKY SLICE",
+            "description": "Acts first, An attack that's stronger when OMORI is HAPPY.",
+            "type": "attack",
+            "level": 12,
+            "juice": 15,
+            "image": "https://static.wikia.nocookie.net/omori/images/9/99/Lucky_Slice_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "TRICK": {
+            "id": 8,
+            "name": "TRICK",
+            "description": "Deals damage. If the foe is HAPPY, greatly reduce its SPEED",
+            "type": "attack",
+            "level": 15,
+            "juice": 20,
+            "image": "https://static.wikia.nocookie.net/omori/images/d/db/Trick_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "PAINFUL TRUTH": {
+            "id": 9,
+            "name": "PAINFUL TRUTH",
+            "description": "Deals damage to a foe. OMORI and the foe become sad.",
+            "type": "attack",
+            "level": 19,
+            "juice": 10,
+            "image": "https://static.wikia.nocookie.net/omori/images/c/c5/Painful_Truth_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "SHUN": {
+            "id": 10,
+            "name": "SHUN",
+            "description": "Deals damage. If the foe is SAD, greatly reduce its DEFENSE.",
+            "type": "attack",
+            "level": 20,
+            "juice": 20,
+            "image": "https://static.wikia.nocookie.net/omori/images/d/df/Shun_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "STARE": {
+            "id": 11,
+            "name": "STARE",
+            "description": "Reduces all of a foe's STATS.",
+            "type": "spell",
+            "level": 25,
+            "juice": 45,
+            "image": "https://static.wikia.nocookie.net/omori/images/5/51/Stare_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "EXPLOIT": {
+            "id": 12,
+            "name": "EXPLOIT",
+            "description": "Deals extra damage to a HAPPY, SAD, or ANGRY foe.",
+            "type": "attack",
+            "level": 30,
+            "juice": 30,
+            "image": "https://static.wikia.nocookie.net/omori/images/3/38/Attack_%28Solid%29.gif",
+            "character": "OMORI"
+        },
+        "FINAL STRIKE": {
+            "id": 13,
+            "name": "FINAL STRIKE",
+            "description": "Strikes all foes, Deals more damage if OMORI has a higher stage of EMOTION.",
+            "type": "attack",
+            "level": 50,
+            "juice": 35,
+            "image": "https://static.wikia.nocookie.net/omori/images/7/7e/Final_Strike_%28Omori%29.gif",
+            "character": "OMORI"
+        },
+        "PEP TALK": {
+            "id": 14,
+            "name": "PEP TALK",
+            "description": "Makes a friend or foe HAPPY",
+            "type": "spell",
+            "level": 0,
+            "juice": 5,
+            "image": "https://static.wikia.nocookie.net/omori/images/e/e9/Pep_Talk_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "HEADBUTT": {
+            "id": 15,
+            "name": "HEADBUTT",
+            "description": "Deals big damage, but AUBREY also takes damage up to 20% of her HEARTS. Stronger when AUBREY is ANGRY",
+            "type": "attack",
+            "level": null,
+            "juice": 5,
+            "image": null,
+            "character": "AUBREY"
+        },
+        "COUNTER": {
+            "id": 16,
+            "name": "COUNTER",
+            "description": "All foes target AUBREY for 1 turn, if AUBREY is attacked, she attacks.",
+            "type": "attack",
+            "level": 6,
+            "juice": 5,
+            "image": "https://static.wikia.nocookie.net/omori/images/b/bc/Attack_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "TWIRL": {
+            "id": 17,
+            "name": "TWIRL",
+            "description": "AUBREY attacks a foe and becomes HAPPY.",
+            "type": "attack",
+            "level": 10,
+            "juice": 10,
+            "image": "https://static.wikia.nocookie.net/omori/images/5/59/Twirl_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "TEAM SPIRIT": {
+            "id": 18,
+            "name": "TEAM SPIRIT",
+            "description": "Makes AUBREY and a friend HAPPY",
+            "type": "spell",
+            "level": 11,
+            "juice": 10,
+            "image": "https://static.wikia.nocookie.net/omori/images/4/49/Team_Spirit_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "POWER HIT": {
+            "id": 19,
+            "name": "POWER HIT",
+            "description": "An attack that ignores a foe's DEFENSE, then reduces the foe's DEFENSE by one tier",
+            "type": "attack",
+            "level": 14,
+            "juice": 20,
+            "image": "https://static.wikia.nocookie.net/omori/images/e/e5/Power_Hit_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "MOOD WRECKER": {
+            "id": 20,
+            "name": "MOOD WRECKER",
+            "description": "A swing that deosn't miss, Deals extra damage to HAPPY foes.",
+            "type": "attack",
+            "level": 17,
+            "juice": 10,
+            "image": "https://static.wikia.nocookie.net/omori/images/a/a7/Mood_Wrecker_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "WIND-UP THROW": {
+            "id": 21,
+            "name": "WIND-UP THROW",
+            "description": "Damages all foes. Deals more damage the less enemies there are",
+            "type": "attack",
+            "level": 20,
+            "juice": 20,
+            "image": "https://static.wikia.nocookie.net/omori/images/c/c6/Wind-Up_Throw_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "MASH": {
+            "id": 22,
+            "name": "MASH",
+            "description": "If this skill defeats a foe, recover 100% JUICE.",
+            "type": "attack",
+            "level": 23,
+            "juice": 15,
+            "image": "https://static.wikia.nocookie.net/omori/images/b/bc/Attack_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "BEATDOWN": {
+            "id": 23,
+            "name": "BEATDOWN",
+            "description": "Attacks a foe 3 times.",
+            "type": "attack",
+            "level": 27,
+            "juice": 30,
+            "image": "https://static.wikia.nocookie.net/omori/images/f/f8/Beatdown_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "LAST RESORT": {
+            "id": 24,
+            "name": "LAST RESORT",
+            "description": "Deals damage based on AUBREY's HEART, but AUBREY becomes TOAST.",
+            "type": "attack",
+            "level": 30,
+            "juice": 50,
+            "image": "https://static.wikia.nocookie.net/omori/images/5/56/Last_Resort_%28Aubrey%29.gif",
+            "character": "AUBREY"
+        },
+        "ANNOY": {
+            "id": 25,
+            "name": "ANNOY",
+            "description": "Makes a friend or foe ANGRY",
+            "type": "spell",
+            "level": 0,
+            "juice": 5,
+            "image": "https://static.wikia.nocookie.net/omori/images/5/57/Annoy_%28Kel%29.gif",
+            "character": "KEL"
+        },
+        "REBOUND": {
+            "id": 26,
+            "name": "REBOUND",
+            "description": "Deals damage to all foes.",
+            "type": "attack",
+            "level": 4,
+            "juice": 15,
+            "image": "https://static.wikia.nocookie.net/omori/images/b/be/Rebound_%28Kel%29.gif",
+            "character": "KEL"
+        },
+        "RUN N GUN": {
+            "id": 27,
+            "name": "RUN N GUN",
+            "description": "KEL does an attack based on his SPEED instead of his ATTACK.",
+            "type": "attack",
+            "level": 9,
+            "juice": 15,
+            "image": "https://static.wikia.nocookie.net/omori/images/e/ef/Run_N%27_Gun_%28Kel%29.gif",
+            "character": "KEL"
+        },
+        "CURVEBALL": {
+            "id": 28,
+            "name": "CURVEBALL",
+            "description": "Makes a foe feel a random EMOTION. Deals extra damage to foes with EMOTION.",
+            "type": "spell",
+            "level": 10,
+            "juice": 20,
+            "image": "https://static.wikia.nocookie.net/omori/images/d/dd/Curveball_%28Kel%29.gif",
+            "character": "KEL"
+        },
+        "RICOCHET": {
+            "id": 29,
+            "name": "RICOCHET",
+            "description": "Deals damage to a foe 3 times, with a 30% damage variation.",
+            "type": "attack",
+            "level": 16,
+            "juice": 30,
+            "image": "https://static.wikia.nocookie.net/omori/images/4/43/Ricochet_%28Kel%29.gif",
+            "character": "KEL"
+        },
+        "MEGAPHONE": {
+            "id": 30,
+            "name": "MEGAPHONE",
+            "description": "Makes all friends ANGRY.",
+            "type": "spell",
+            "level": 20,
+            "juice": 45,
+            "image": "https://static.wikia.nocookie.net/omori/images/0/0e/Megaphone_%28Kel%29.gif",
+            "character": "KEL"
+        },
+        "CAN'T CATCH ME": {
+            "id": 31,
+            "name": "CAN'T CATCH ME",
+            "description": "Attracts attention and reduces all foes HIT RATE by 55% for two turns.",
+            "type": "spell",
+            "level": 21,
+            "juice": 50,
+            "image": null,
+            "character": "KEL"
+        },
+        "RALLY": {
+            "id": 32,
+            "name": "RALLY",
+            "description": "KEL becomes HAPPY. KEL's friends recover some ENERGY and JUICE.",
+            "type": "spell",
+            "level": 26,
+            "juice": 50,
+            "image": null,
+            "character": "KEL"
+        },
+        "COMEBACK": {
+            "id": 33,
+            "name": "COMEBACK",
+            "description": "Makes KEL HAPPY. If SAD was removed, KEL gains FLEX.",
+            "type": "spell",
+            "level": 29,
+            "juice": 25,
+            "image": null,
+            "character": "KEL"
+        },
+        "TICKLE": {
+            "id": 34,
+            "name": "TICKLE",
+            "description": "All attacks on a foe will hit right in the HEART next turn.",
+            "type": "spell",
+            "level": 30,
+            "juice": 55,
+            "image": null,
+            "character": "KEL"
+        },
+        "FLEX": {
+            "id": 35,
+            "name": "FLEX",
+            "description": "KEL deals more damage next turn by 2.5",
+            "type": "spell",
+            "level": null,
+            "juice": 10,
+            "image": "https://static.wikia.nocookie.net/omori/images/f/f4/Flex_%28Kel%29.gif",
+            "character": "KEL"
+        },
+        "JUICE ME": {
+            "id": 36,
+            "name": "JUICE ME",
+            "description": "Heals a lot of JUICE to a frined, but also hurts 25% of the friends's current HEART. (Restores 40% MP)",
+            "type": "spell",
+            "level": null,
+            "juice": 10,
+            "image": "https://static.wikia.nocookie.net/omori/images/3/38/Attack_%28Solid%29.gif",
+            "character": "KEL"
+        },
+        "SNOWBALL": {
+            "id": 37,
+            "name": "SNOWBALL",
+            "description": "Makes a foe SAD. Also deals big damage to SAD foes.",
+            "type": "attack",
+            "level": null,
+            "juice": 20,
+            "image": "https://static.wikia.nocookie.net/omori/images/9/91/Snowball_%28Kel%29.gif",
+            "character": "KEL"
+        },
+        "COOK": {
+            "id": 38,
+            "name": "COOK",
+            "description": "Heals a friend for 75% of their HEART. Can be used outside of battle.",
+            "type": "spell",
+            "level": 0,
+            "juice": 10,
+            "image": "https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif",
+            "character": "HERO"
+        },
+        "MASSAGE": {
+            "id": 39,
+            "name": "MASSAGE",
+            "description": "Removes a friend or foe's EMOTION.",
+            "type": "spell",
+            "level": 2,
+            "juice": 5,
+            "image": "https://static.wikia.nocookie.net/omori/images/3/39/Massage_%28Hero%29.gif",
+            "character": "HERO"
+        },
+        "CHARM": {
+            "id": 40,
+            "name": "CHARM",
+            "description": "Acts first, a foe targets HERO for 1 turn.",
+            "type": "spell",
+            "level": 8,
+            "juice": 10,
+            "image": null,
+            "character": "HERO"
+        },
+        "SMILE": {
+            "id": 41,
+            "name": "SMILE",
+            "description": "Acts first, reducing a foe's ATTACK",
+            "type": "spell",
+            "level": 10,
+            "juice": 25,
+            "image": null,
+            "character": "HERO"
+        },
+        "FAST FOOD": {
+            "id": 42,
+            "name": "FAST FOOD",
+            "description": "Acts first, healing a friend for 40% of their HEART.",
+            "type": "spell",
+            "level": 13,
+            "juice": 15,
+            "image": "https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif",
+            "character": "HERO"
+        },
+        "HOMEMADE JAM": {
+            "id": 43,
+            "name": "HOMEMADE JAM",
+            "description": "Brings back a friend that is TOAST with 70% of their HEART.",
+            "type": "spell",
+            "level": 16,
+            "juice": 40,
+            "image": null,
+            "character": "HERO"
+        },
+        "CAPTIVATE": {
+            "id": 44,
+            "name": "CAPTIVATE",
+            "description": "Acts first, All foes target HERO for 1 turn.",
+            "type": "spell",
+            "level": 20,
+            "juice": 20,
+            "image": null,
+            "character": "HERO"
+        },
+        "ENCHANT": {
+            "id": 45,
+            "name": "ENCHANT",
+            "description": "Acts first. A foe targets HERO for 1 turn and becomes HAPPY.",
+            "type": "spell",
+            "level": 22,
+            "juice": 15,
+            "image": null,
+            "character": "HERO"
+        },
+        "SHARE FOOD": {
+            "id": 46,
+            "name": "SHARE FOOD",
+            "description": "HERO and a friend recover some HEART. (Heals 50% HP)",
+            "type": "spell",
+            "level": 24,
+            "juice": 15,
+            "image": "https://static.wikia.nocookie.net/omori/images/b/be/Cook_%28Hero%29.gif",
+            "character": "HERO"
+        },
+        "MEZMERIZE": {
+            "id": 47,
+            "name": "MEZMERIZE",
+            "description": "Acts first. All foes target HERO for 1 turn. HERO takes less damage by 50%.",
+            "type": "spell",
+            "level": 28,
+            "juice": 35,
+            "image": null,
+            "character": "HERO"
+        },
+        "DAZZLE": {
+            "id": 48,
+            "name": "DAZZLE",
+            "description": "Acts first. Reduces all foe's ATTACK and makes them HAPPY.",
+            "type": "spell",
+            "level": 30,
+            "juice": 35,
+            "image": null,
+            "character": "HERO"
+        }
+    }
+}

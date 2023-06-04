@@ -27,6 +27,8 @@ class Character:
     location: str
     image: str
 
+    instance: typing.Any = UnregisteredDataManager()
+
     def __post_init__(self):
         print(f"{self.name} has been created")
 
@@ -55,7 +57,7 @@ class Skill:
     level: typing.Union[int, str]
     image: str
     juice: int
-    character: int
+    character: str
 
     instance: typing.Any = UnregisteredDataManager()
 
