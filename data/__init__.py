@@ -125,6 +125,7 @@ def get_characters(instance):
             birthday=character["birthday"],
             BD_UNIX=character["BD_UNIX"],
             location=character["location"],
+            expressions=character["expressions"],
             image=character["image"],
             instance=instance
         )

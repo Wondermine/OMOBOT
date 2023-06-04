@@ -9,6 +9,7 @@
             "birthday": "July 20th",
             "BD_UNIX": 1689807600,
             "location": "White space",
+            "expressions" : [],
             "image": "https://static.wikia.nocookie.net/omori/images/8/89/Omori_Neutral_%28No_Background%29.gif"
         },
         "AUBREY": {
@@ -20,6 +21,7 @@
             "birthday": "May 23rd",
             "BD_UNIX": 1684796400,
             "location": "Head Space",
+            "expressions" : [],
             "image": "https://static.wikia.nocookie.net/omori/images/a/ab/DW_Aubrey_Neutral_%28No_Background%29.gif"
         },
         "KEL": {
@@ -31,6 +33,7 @@
             "birthday": "November 11st",
             "BD_UNIX": 1668121200,
             "location": "Head Space",
+            "expressions" : [],
             "image": "https://static.wikia.nocookie.net/omori/images/f/f4/DW_Kel_Neutral_%28No_Background%29.gif"
         },
         "HERO": {
@@ -42,6 +45,7 @@
             "birthday": "January 1st",
             "BD_UNIX": 1672527600,
             "location": "Head Space",
+            "expressions" : [],
             "image": "https://static.wikia.nocookie.net/omori/images/2/2b/DW_Hero_Neutral_%28No_Background%29.gif"
         },
         "BASIL": {
@@ -53,6 +57,7 @@
             "birthday": "February 18th",
             "BD_UNIX": 1676674800,
             "location": "Head Space",
+            "expressions" : [],
             "image": "https://static.wikia.nocookie.net/omori/images/9/99/Basil_%28Neutral%29.gif"
         },
         "MARI": {
@@ -64,6 +69,7 @@
             "birthday": "March 1st",
             "BD_UNIX": 1677625200,
             "location": "Head Space",
+            "expressions" : [],
             "image": "https://static.wikia.nocookie.net/omori/images/5/58/MARI.png"
         }
     }
