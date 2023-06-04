@@ -14,7 +14,8 @@ import os
 
 class OMOBOT(commands.AutoShardedBot):
     """
-    An instance of AutoShardedBot that offers more typing options and makes development easier.
+    OMOBOT
+    The OMORI themed discord bot.
     """
 
     class Embed(discord.Embed):
