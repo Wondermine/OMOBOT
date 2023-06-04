@@ -14,4 +14,4 @@ RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 RUN poetry install
 
-CMD ["python3", "-m", "/app/bot"]
+CMD ["python3", "-m", "app/bot"]
