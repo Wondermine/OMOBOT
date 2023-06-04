@@ -489,6 +489,96 @@
             "juice": 35,
             "image": null,
             "character": "HERO"
+        },
+        "CHEER": {
+            "id": 49,
+            "name": "CHEER",
+            "description": "Heals all friends JUICE by 20%. Greatly increases a STAT by three tiers if BASIL is feeling an EMOTION.",
+            "type": "spell",
+            "level": 0,
+            "juice": 80,
+            "image": "https://static.wikia.nocookie.net/omori/images/9/9c/Cheer_%28Basil%29.gif",
+            "character": "BASIL"
+        },
+        "HERBAL REMEDY" : {
+            "id": 50,
+            "name": "HERBAL REMEDY",
+            "description": "Heals a friend for 75% of their HEART. Also increases ENERGY by 1.",
+            "type": "spell",
+            "level": 0,
+            "juice": 35,
+            "image": "https://static.wikia.nocookie.net/omori/images/0/08/Herbal_Remedy_%28Basil%29.gif",
+            "character": "BASIL"
+        },
+        "PHOTOGRAPH" : {
+            "id": 51,
+            "name": "PHOTOGRAPH",
+            "description": "Acts first, reducing HIT RATE by 25% for all foes for 1 turn. All foes target BASIL for 1 turn.",
+            "type": "spell",
+            "level": 0,
+            "juice": 50,
+            "image": "https://static.wikia.nocookie.net/omori/images/a/a1/Stats_Down_%28Enemy%29.gif",
+            "character": "BASIL"
+        },
+        "BODY SLAM" : {
+            "id": 52,
+            "name": "BODY SLAM",
+            "description": "Deals damage that increases with more ENERGY. Damage output depends on BASIL's level (which equals OMORI's level).",
+            "type": "spell",
+            "level": 0,
+            "juice": 40,
+            "image": "https://static.wikia.nocookie.net/omori/images/5/59/Attack_%28Large%29.gif",
+            "character": "BASIL"
+        },
+        "TULIP" : {
+            "id": 53,
+            "name": "TULIP",
+            "description": "Deals damage to all foes based on OMORI's STATS.",
+            "type": "spell",
+            "level": 0,
+            "juice": 40,
+            "image": "https://static.wikia.nocookie.net/omori/images/0/0c/Basil_%28Tulip_Border%29.png",
+            "character": "BASIL"
+        },
+        "GLADIOLUS" : {
+            "id": 54,
+            "name": "GLADIOLUS",
+            "description": "Deals big damage that ignores DEFENSE, with a 10% damage variation. Always hits right in the HEART.",
+            "type": "spell",
+            "level": 0,
+            "juice": 40,
+            "image": "https://static.wikia.nocookie.net/omori/images/c/cf/Omori_Attack_Again_3.gif",
+            "character": "BASIL"
+        },
+        "CACTUS" : {
+            "id": 55,
+            "name": "CACTUS",
+            "description": "Deals damage based on DEFENSE and HEART instead of ATTACK, with a 10% damage variation.",
+            "type": "spell",
+            "level": 0,
+            "juice": 40,
+            "image": "https://static.wikia.nocookie.net/omori/images/5/59/Attack_%28Large%29.gif",
+            "character": "BASIL"
+        },
+        "ROSE" : {
+            "id": 56,
+            "name": "ROSE",
+            "description": "Acts first, reducing all foes' ATTACK by one tier. Heals all friends for 40% of their HEART.",
+            "type": "spell",
+            "level": 0,
+            "juice": 50,
+            "image": "https://static.wikia.nocookie.net/omori/images/3/3c/Mesmerize_%28Hero_Boss%29.gif",
+            "character": "BASIL"
+        },
+        "FLOWER CROWN" : {
+            "id": 57,
+            "name": "FLOWER CROWN",
+            "description": "Deals big damage 4 times.",
+            "type": "spell",
+            "level": 0,
+            "juice": 75,
+            "image": "https://static.wikia.nocookie.net/omori/images/3/3d/Flower_Crown_%28Normal%29.gif",
+            "character": "BASIL"
         }
     }
 }

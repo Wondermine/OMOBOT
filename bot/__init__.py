@@ -1,5 +1,6 @@
 """
 OMOBOT
+The OMORI themed discord bot.
 """
 
 __title__ = 'OMOBOT'

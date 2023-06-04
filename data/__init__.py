@@ -116,7 +116,6 @@ def get_characters(instance):
 
         character = data["DreamWorld"][character_name]
 
-
         characters[character["id"]] = models.Character(
             id=character["id"],
             name=character["name"],
@@ -135,9 +134,9 @@ def get_characters(instance):
 
 class DataManager(models.DataManagerBase):
     def __init__(self):
-        self.items = get_items(self)
+        # self.items = get_items(self)
         self.skills = get_skills(self)
-        self.enemies = get_enemies(self)
+        # self.enemies = get_enemies(self)
         self.characters = get_characters(self)
 
     async def find_character_by_name(self, name: str) -> Character | None:

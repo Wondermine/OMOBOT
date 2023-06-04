@@ -26,6 +26,7 @@ class Character:
     BD_UNIX: int
     location: str
     image: str
+    expressions: list
 
     instance: typing.Any = UnregisteredDataManager()
 
@@ -92,8 +93,8 @@ class Enemy:
 
 @dataclass
 class DataManagerBase:
-    enemies: typing.Dict[int, Enemy] = None
-    items: typing.Dict[int, Item] = None
+    # enemies: typing.Dict[int, Enemy] = None
+    # items: typing.Dict[int, Item] = None
     skills: typing.Dict[int, Skill] = None
     characters: typing.Dict[int, Character] = None
     

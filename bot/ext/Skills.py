@@ -23,7 +23,6 @@ class Paginator(View):
 
     @discord.ui.button(label="<")
     async def less(self, inter: discord.Interaction, button: discord.Button):
-        await inter.response.defer()
         if self.user.id != self.user.id:
             await inter.response.send_message("That is not yours?", ephemeral=True)
             return
@@ -31,6 +30,7 @@ class Paginator(View):
             await inter.response.send_message("You can't go any further", ephemeral=True)
             return
 
+        await inter.response.defer()
         self.page -= 1
         await inter.message.edit(embed=self.pages[self.page - 1])
 
@@ -39,6 +39,8 @@ class Paginator(View):
         if self.user.id != self.user.id:
             await inter.response.send_message("That is not yours?", ephemeral=True)
             return
+
+        await inter.response.defer()
 
         action = inter.message.components[0]
 
@@ -56,13 +58,10 @@ class Paginator(View):
 
         await inter.message.edit(view=view)
 
-        await inter.response.defer()
-
         self.stop()
 
     @discord.ui.button(label=">")
     async def more(self, inter: discord.Interaction, button: discord.Button):
-        await inter.response.defer()
         if self.user.id != self.user.id:
             await inter.response.send_message("That is not yours?", ephemeral=True)
             return
@@ -71,6 +70,7 @@ class Paginator(View):
             await inter.response.send_message("You can't go any further", ephemeral=True)
             return
 
+        await inter.response.defer()
         self.page += 1
         await inter.message.edit(embed=self.pages[self.page - 1])
 

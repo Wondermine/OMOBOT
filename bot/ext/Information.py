@@ -16,7 +16,7 @@ class Information(commands.Cog):
     @app_commands.checks.cooldown(1, 30.0)
     @app_commands.command(name="info", description="Shows information about OMOBOT.")
     async def information(self, inter: discord.Interaction):
-        pass
+        await inter.response.send_message("working on it", ephemeral=True)
 
     @app_commands.checks.cooldown(1, 30.0)
     @app_commands.command(name="botinfo", description="Shows information about the instance of the bot")
@@ -33,7 +33,9 @@ class Information(commands.Cog):
             url="https://discord.gg/47vGg2zwPu",
             timestamp=discord.utils.utcnow(),
             description=(
-                f'`{self.bot.user}`\n\n'
+                f'```yml\n'
+                f'{self.bot.description}'
+                f'```\n\n'
                 f'[**Invite Me**]({self.bot.invite_url})\n'
                 f'[**Join our Community**](https://discord.gg/47vGg2zwPu)\n'
                 '\n```yml\n'
