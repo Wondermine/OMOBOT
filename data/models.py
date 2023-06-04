@@ -30,9 +30,6 @@ class Character:
 
     instance: typing.Any = UnregisteredDataManager()
 
-    def __post_init__(self):
-        print(f"{self.name} has been created")
-
 
 @dataclass
 class Item:
@@ -44,9 +41,6 @@ class Item:
     image: str
 
     instance: typing.Any = UnregisteredDataManager()
-
-    def __str__(self):
-        return self.name
 
 
 @dataclass
@@ -101,5 +95,3 @@ class DataManagerBase:
     @cached_property
     def list_characters(self):
         return [character.name for character in self.characters.values()]
-
-    

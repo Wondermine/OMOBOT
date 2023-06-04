@@ -31,14 +31,15 @@ class Information(commands.Cog):
         embed = self.bot.Embed(
             title="Project OMOBOT",
             url="https://discord.gg/47vGg2zwPu",
-            timestamp=discord.utils.utcnow(),
             description=(
+                f'[**Invite The Bot**]({self.bot.invite_url})\n'
+                f'[**Join our Community**](https://discord.gg/47vGg2zwPu)\n\n'
+                "**Description:**\n"
                 f'```yml\n'
-                f'{self.bot.description}'
-                f'```\n\n'
-                f'[**Invite Me**]({self.bot.invite_url})\n'
-                f'[**Join our Community**](https://discord.gg/47vGg2zwPu)\n'
-                '\n```yml\n'
+                f'{self.bot.description}\n'
+                f'```\n'
+                "**Statistics:**\n"
+                '```yml\n'
                 f'Developer:  {owner}\n'
                 f'Written-in: Python {platform.python_version()}\n'
                 f'Library:    {discord.__name__}.py {discord.__version__}\n'

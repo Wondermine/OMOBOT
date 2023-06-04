@@ -165,14 +165,14 @@ class SkillCommand(
                     name=f"{skill_count}. {skill}",
                     value=(
                         "```yml\n"
-                        f"{skill.description}"
+                        f"{skill.description}\n"
                         "```"
                     )
                     , inline=False
                 )
 
             embed.set_footer(
-                text=f"Skills of {character}. {skill_count} in total",
+                text=f"Skills of the character {character.value}. {skill_count} Skills in total",
                 icon_url=self.bot.user.display_avatar.url
             )
 
@@ -191,7 +191,7 @@ class SkillCommand(
 
         embed = self.bot.Embed(
             title="Game skills",
-            description=f"A list of all OMORI skills that exist.\nA total of **{len(skills)}** exist."
+            description=f"A list of all OMORI skills that exist.\nA total of **{len(skills)}** Skills exist."
         )
         embed.set_footer(text=f"Page 1", icon_url=inter.user.avatar.url)
 
@@ -201,7 +201,11 @@ class SkillCommand(
             total_skills += 1
             embed.add_field(
                 name=f"{total_skills}. {skills[index].name}",
-                value=f"`{skills[index].description}`",
+                value=(
+                    "```yml\n"
+                    f"{skills[index].description}\n"
+                    "```"
+                ),
                 inline=False
             )
 

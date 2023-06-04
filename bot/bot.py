@@ -1,35 +1,34 @@
-from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
-from typing import Union
-from discord.ext import commands
+import logging
+import os
+import pathlib
 from datetime import datetime
-from data import DataManager
 from inspect import getdoc
 
 import discord
 import jishaku
-import logging
-import pathlib
-import os
+from discord.ext import commands
+from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
+
+from data import DataManager
 
 
 class OMOBOT(commands.AutoShardedBot):
     """
-    OMOBOT
-    The OMORI themed discord bot.
+    OMOBOT. The OMORI themed discord bot.
     """
 
     class Embed(discord.Embed):
         def __init__(self, **kwargs):
             color = kwargs.pop("color", 0x2F3136)
-            super().__init__(**kwargs, color=color)
+            timestamp = kwargs.pop("timestamp", discord.utils.utcnow())
+            super().__init__(**kwargs, color=color, timestamp=timestamp)
 
     def __init__(self, **kwargs):
         super().__init__(
             **kwargs,
             intents=discord.Intents.default(),
             owner_ids=[1051383406598045696],
-            strip_after_prefix=True,
-            guild_ids=[1101417305897979975],
+            strip_after_prefix=True
         )
 
         self.cluster: AsyncIOMotorClient = AsyncIOMotorClient(os.getenv("DREAMER"))
@@ -40,17 +39,14 @@ class OMOBOT(commands.AutoShardedBot):
 
         self.activity = discord.Game("OMORI")
         self.status = discord.Status.idle
+
         self.log = logging.getLogger("discord")
+
         self.description = getdoc(self)
 
         self.cog_list = []
 
         self.help_command = None
-
-        self.dev_log: Union[discord.TextChannel, discord.Object] = discord.Object(id=1114793154453979196)
-        self.guilds_log: Union[discord.TextChannel, discord.Object] = discord.Object(id=1114793482750533642)
-        self.errors_log: Union[discord.TextChannel, discord.Object] = discord.Object(id=1114793532079747072)
-
         self.launch_time: datetime = datetime.utcnow()
 
     @property
