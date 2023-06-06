@@ -4,7 +4,10 @@ import pathlib
 from datetime import datetime
 from inspect import getdoc
 
+from typing import Union
+
 import discord
+from discord.app_commands import Choice
 import jishaku
 from discord.ext import commands
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
@@ -16,7 +19,6 @@ class OMOBOT(commands.AutoShardedBot):
     """
     OMOBOT. The OMORI themed discord bot.
     """
-
     class Embed(discord.Embed):
         def __init__(self, **kwargs):
             color = kwargs.pop("color", 0x2F3136)

@@ -1,0 +1,86 @@
+{
+    "OMORI": {
+        "id": 0,
+        "name": "OMORI",
+        "description": "OMORI is the titular deuteragonist in OMORI. OMORI can be controlled by the player during the night, where WHITE SPACE and the areas of HEADSPACE can be explored. When OMORI is in the lead, he can cut down obstacles with his knife.",
+        "gender": "Male",
+        "age": 12,
+        "birthday": "July 20th",
+        "BD_UNIX": 1689807600,
+        "location": "White space",
+        "expressions": [],
+        "image": "https://static.wikia.nocookie.net/omori/images/8/89/Omori_Neutral_%28No_Background%29.gif"
+    },
+    "AUBREY": {
+        "id": 1,
+        "name": "AUBREY",
+        "description": "AUBREY is one of the main three deuteragonists in OMORI that join OMORI's party. However, in the FARAWAY TOWN sections of the game, she serves as a minor antagonist. When tagged as the leader, AUBREY can smash obstacles with a bat.",
+        "gender": "Female",
+        "age": 12,
+        "birthday": "May 23rd",
+        "BD_UNIX": 1684796400,
+        "location": "Head Space",
+        "expressions": [],
+        "image": "https://static.wikia.nocookie.net/omori/images/a/ab/DW_Aubrey_Neutral_%28No_Background%29.gif"
+    },
+    "KEL": {
+        "id": 2,
+        "name": "KEL",
+        "description": "KEL is one of the main three deuteragonists that join OMORI's party in OMORI. When tagged as the leader, KEL can throw various ball projectiles from certain platforms to hit objects otherwise inaccessible to the party.",
+        "gender": "Male",
+        "age": 12,
+        "birthday": "November 11st",
+        "BD_UNIX": 1668121200,
+        "location": "Head Space",
+        "expressions": [],
+        "image": "https://static.wikia.nocookie.net/omori/images/f/f4/DW_Kel_Neutral_%28No_Background%29.gif"
+    },
+    "HERO": {
+        "id": 3,
+        "name": "HERO",
+        "description": "HERO is one of the main three deuteragonists in OMORI that join OMORI's party. When tagged as the leader, HERO can use his charm to convince others to assist the party.",
+        "gender": "Male",
+        "age": 12,
+        "birthday": "January 1st",
+        "BD_UNIX": 1672527600,
+        "location": "Head Space",
+        "expressions": [],
+        "image": "https://static.wikia.nocookie.net/omori/images/2/2b/DW_Hero_Neutral_%28No_Background%29.gif"
+    },
+    "BASIL": {
+        "id": 4,
+        "name": "BASIL",
+        "description": "BASIL is a major supporting character and the tritagonist in OMORI. He serves as one of the major driving forces behind the story's events as the party spends most of the game looking for him after his sudden disappearance. ",
+        "gender": "Male",
+        "age": 12,
+        "birthday": "February 18th",
+        "BD_UNIX": 1676674800,
+        "location": "Head Space",
+        "expressions": [],
+        "image": "https://static.wikia.nocookie.net/omori/images/9/99/Basil_%28Neutral%29.gif"
+    },
+    "MARI": {
+        "id": 5,
+        "name": "MARI",
+        "description": "MARI is a major supporting character in OMORI. She is the older sister of OMORI in HEADSPACE, and SUNNY's older sister in the REAL WORLD. Her presence as a whole also serves as one of the major driving forces behind the game's story.",
+        "gender": "Female",
+        "age": 15,
+        "birthday": "March 1st",
+        "BD_UNIX": 1677625200,
+        "location": "Head Space",
+        "expressions": [],
+        "image": "https://static.wikia.nocookie.net/omori/images/5/58/MARI.png"
+    },
+    "SUNNY": {
+        "id": 6,
+        "name": "SUNNY",
+        "description": "SUNNY is the player character and silent main protagonist in OMORI. SUNNY can be controlled and named by the player during day sections, where FARAWAY TOWN can be explored.",
+        "gender": "Male",
+        "age": 16,
+        "birthday": "July 20th",
+        "BD_UNIX": 1689807600,
+        "location": "FARAWAY TOWN",
+        "expressions": [],
+        "image": "https://static.wikia.nocookie.net/omori/images/e/eb/Sunny_Neutral_%28No_Background%29.gif"
+    }
+}
