@@ -1,26 +1,24 @@
 from discord import Interaction
 from discord.app_commands import AppCommandError, CommandOnCooldown
 import os
-from .bot import OMOBOT
+from bot.bot import OMOBOT
 
 
-def determine_prefix(bot, message):
-    return [f"<@{bot.user.id}>", f"<@!{bot.user.id}>"]
+def determine_prefix(client, message):
+    return [f"<@{client.user.id}>", f"<@!{client.user.id}>"]
 
 
 if __name__ == "__main__":
     bot = OMOBOT(command_prefix=determine_prefix)
 
-    tree = bot.tree
-
-    @tree.error
+    @bot.tree.error
     async def on_app_command_error(inter: Interaction, error: AppCommandError):
         if isinstance(error, CommandOnCooldown):
             await inter.response.send_message(str(error), ephemeral=True)
             return
 
         embed = bot.Embed(
-            title="An error has occured",
+            title="An error has occurred",
             description=(
                 "```yml\n"
                 f"{error}\n"

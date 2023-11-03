@@ -1,18 +1,16 @@
-import logging
 import os
+import discord
+import jishaku
+import logging
 import pathlib
-from datetime import datetime
-from inspect import getdoc
 
 from typing import Union
-
-import discord
-from discord.app_commands import Choice
-import jishaku
-from discord.ext import commands
-from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
-
+from inspect import getdoc
 from data import DataManager
+from datetime import datetime
+from discord.ext import commands
+from discord.app_commands import Choice
+from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 
 
 class OMOBOT(commands.AutoShardedBot):
@@ -22,7 +20,9 @@ class OMOBOT(commands.AutoShardedBot):
     class Embed(discord.Embed):
         def __init__(self, **kwargs):
             color = kwargs.pop("color", 0x2F3136)
+
             timestamp = kwargs.pop("timestamp", discord.utils.utcnow())
+
             super().__init__(**kwargs, color=color, timestamp=timestamp)
 
     def __init__(self, **kwargs):

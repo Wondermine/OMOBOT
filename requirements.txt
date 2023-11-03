@@ -1,0 +1,5 @@
+discord.py >= 2.2.3
+python-dotenv >= 1.0.0
+motor >= 3.1.2
+jishaku >= 2.5.2
+pillow >= 9.5.0

@@ -1,11 +1,9 @@
-import discord
 import platform
+import discord
 import time
 
 from discord.ext import commands
-
 from discord import app_commands
-
 from bot.bot import OMOBOT
 
 
@@ -14,12 +12,43 @@ class Information(commands.Cog):
         self.bot = bot
 
     @app_commands.checks.cooldown(1, 30.0)
-    @app_commands.command(name="info", description="Shows information about OMOBOT.")
+    @app_commands.command(name="information", description="Shows information about OMOBOT.")
     async def information(self, inter: discord.Interaction):
-        await inter.response.send_message("working on it", ephemeral=True)
+
+        owner = await self.bot.fetch_user(self.bot.owner_ids[0])
+
+        embed = self.bot.Embed(
+            title="OMOBOT",
+            url="https://discord.gg/47vGg2zwPu",
+        )
+
+        embed.description = (
+            "**Project OMOBOT:**\n"
+            "```yml\n"
+            "This Project was made to fulfill and make stuff easier to whom want to access data about OMORI in a fast "
+            "and transparent way.\n"
+            "```\n"
+            f"**Owner:**"
+            f"```yml\n"
+            f"{str(owner)}"
+            f"```\n"
+            "**Description:**\n"
+            "```yml\n"
+            "OMOBOT can deliver information about the game OMORI in a fast and transparent way.\n"
+            "It can also generate Text Boxes that are nearly identical to the game.\n"
+            "It can generate [Animated] and [Still] images of Text Boxes to fill your desires."
+            "```\n"
+        )
+        embed.set_author(
+            name=inter.user.display_name,
+            icon_url=inter.user.display_avatar.url,
+        )
+        embed.set_thumbnail(url=self.bot.user.display_avatar.url)
+
+        await inter.response.send_message(embed=embed)
 
     @app_commands.checks.cooldown(1, 30.0)
-    @app_commands.command(name="botinfo", description="Shows information about the instance of the bot")
+    @app_commands.command(name="bot-info", description="Shows information about the instance of the bot")
     async def instance_information(self, inter: discord.Interaction):
 
         rest_start = time.perf_counter()
