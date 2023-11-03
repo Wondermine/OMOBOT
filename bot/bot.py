@@ -5,7 +5,7 @@ import logging
 import pathlib
 
 from inspect import getdoc
-from .data import DataManager
+from bot.data import DataManager
 from datetime import datetime
 from discord.ext import commands
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
