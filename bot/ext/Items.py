@@ -8,7 +8,7 @@ from typing import (Optional)
 
 from bot.bot import OMOBOT
 
-from bot.data import Paginator
+from bot.data.models import Paginator
 
 characters_choices = [
             Choice(name="OMORI", value="omori"),
