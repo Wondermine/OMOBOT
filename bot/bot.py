@@ -30,11 +30,6 @@ class OMOBOT(commands.AutoShardedBot):
             owner_ids=[838677533125115904],
             strip_after_prefix=True
         )
-
-        self.cluster: AsyncIOMotorClient = AsyncIOMotorClient(os.getenv("DREAMER"))
-        self.db: AsyncIOMotorDatabase = self.cluster["database"]
-        self.players: AsyncIOMotorDatabase = self.db["players"]
-
         self.data = DataManager()
 
         self.activity = discord.Game("OMORI")
