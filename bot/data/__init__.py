@@ -1,5 +1,3 @@
-from . import models
-
 import csv
 
 import json
@@ -7,6 +5,9 @@ import discord
 import asyncio
 
 from pathlib import Path
+
+from models import *
+
 
 class Embed(discord.Embed):
     def __init__(self, **kwargs):
@@ -128,7 +129,6 @@ def get_characters():
     characters = {}
 
     for character_name in data:
-
         character = data[character_name]
 
         characters[character["id"]] = models.Character(
