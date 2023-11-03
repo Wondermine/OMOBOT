@@ -29,7 +29,7 @@ class OMOBOT(commands.AutoShardedBot):
         super().__init__(
             **kwargs,
             intents=discord.Intents.default(),
-            owner_ids=[1051383406598045696],
+            owner_ids=[838677533125115904],
             strip_after_prefix=True
         )
 
