@@ -1,4 +1,3 @@
-from bot.data import models
 from . import models
 
 import csv
@@ -8,9 +7,6 @@ import discord
 import asyncio
 
 from pathlib import Path
-
-from .models import Character, Paginator
-
 
 class Embed(discord.Embed):
     def __init__(self, **kwargs):
