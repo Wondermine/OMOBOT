@@ -6,7 +6,7 @@ import asyncio
 
 from pathlib import Path
 
-from models import *
+from data.models import *
 
 
 class Embed(discord.Embed):
