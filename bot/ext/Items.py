@@ -4,11 +4,11 @@ from discord.app_commands import Choice
 
 import discord
 
-from typing import (Optional, Union, Iterable)
+from typing import (Optional)
 
 from bot.bot import OMOBOT
 
-from data.models import Paginator
+from bot.data import Paginator
 
 characters_choices = [
             Choice(name="OMORI", value="omori"),

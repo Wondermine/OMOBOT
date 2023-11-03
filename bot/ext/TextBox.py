@@ -77,8 +77,8 @@ class TextBoxGenerator(
 ):
     def __init__(self, bot: OMOBOT):
         self.bot = bot
-        self.base_font = ImageFont.truetype("./data/fonts/OMORI_GAME.ttf", 30)
-        self.base_path = "./data/assets/characters/"
+        self.base_font = ImageFont.truetype("./bot/data/fonts/OMORI_GAME.ttf", 30)
+        self.base_path = "./bot/data/assets/characters/"
 
     @app_commands.command(name="animated", description="Gives an animated (moving) text box with everything you need.")
     @app_commands.describe(character='Choose a character', expression='Choose a an expression')
@@ -115,7 +115,7 @@ class TextBoxGenerator(
 
         texts = text_splitter(text)
 
-        prev_im = Image.open("./data/assets/base/input.png")
+        prev_im = Image.open("./bot/data/assets/base/input.png")
         portrait = Image.open(self.base_path + character.value + f"/{expression.value}0.png")
 
         gif = []
@@ -207,7 +207,7 @@ class TextBoxGenerator(
 
         texts = text_splitter(text)
 
-        image = Image.open("./data/assets/base/input.png")
+        image = Image.open("./bot/data/assets/base/input.png")
         portrait = Image.open(self.base_path + character.value + f"/{expression.value}0.png")
 
         d = ImageDraw.Draw(image)

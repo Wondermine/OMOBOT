@@ -2,15 +2,13 @@ from discord import app_commands
 from discord.ext.commands import GroupCog
 from discord.app_commands import Choice
 
-from discord.ui import View
-
 import discord
 
-from typing import (Optional, Union)
+from typing import (Optional)
 
 from bot.bot import OMOBOT
 
-from data.models import Paginator
+from bot.data import Paginator
 
 characters_choices = [
             Choice(name="OMORI", value="omori"),

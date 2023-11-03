@@ -166,7 +166,7 @@ for soup in soups:
             idx += 1
     index += 1
 
-with open("../data/data/items.json", "w") as f:
+with open("data/items.json", "w") as f:
     raw_data = json.dumps(items, indent=4)
 
     f.write(raw_data)

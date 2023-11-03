@@ -1,13 +1,11 @@
-from data import models
+from bot.data import models
 from . import models
-import pprint
 
 import csv
 
 import json
 import discord
 import asyncio
-from copy import deepcopy
 
 from pathlib import Path
 
