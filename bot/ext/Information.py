@@ -19,7 +19,7 @@ class Information(commands.Cog):
 
         embed = self.bot.Embed(
             title="OMOBOT",
-            url="https://discord.gg/47vGg2zwPu",
+            url="https://discord.gg/t8g6vGyYJx",
         )
 
         embed.description = (
@@ -45,7 +45,7 @@ class Information(commands.Cog):
         )
         embed.set_thumbnail(url=self.bot.user.display_avatar.url)
 
-        await inter.response.send_message(embed=embed)
+        await inter.response.send_message(embed=embed) # noqa
 
     @app_commands.checks.cooldown(1, 30.0)
     @app_commands.command(name="bot-info", description="Shows information about the instance of the bot")
@@ -62,7 +62,7 @@ class Information(commands.Cog):
             url="https://discord.gg/47vGg2zwPu",
             description=(
                 f'[**Invite The Bot**]({self.bot.invite_url})\n'
-                f'[**Join our Community**](https://discord.gg/47vGg2zwPu)\n\n'
+                f'[**Join our Community**](https://discord.gg/t8g6vGyYJx)\n\n'
                 "**Description:**\n"
                 f'```yml\n'
                 f'{self.bot.description}\n'
@@ -89,7 +89,7 @@ class Information(commands.Cog):
         )
         embed.set_thumbnail(url=self.bot.user.display_avatar.url)
 
-        await inter.response.send_message(embed=embed)
+        await inter.response.send_message(embed=embed) # noqa
 
 
 async def setup(bot: OMOBOT):
