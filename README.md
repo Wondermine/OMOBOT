@@ -1,4 +1,4 @@
-# OMORPG
+# OMOBOT
 
 ## License
 
