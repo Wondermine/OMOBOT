@@ -19,7 +19,7 @@ class Information(commands.Cog):
 
         embed = self.bot.Embed(
             title="OMOBOT",
-            url="https://discord.gg/t8g6vGyYJx",
+            url="https://discord.gg/6q7Fbf7F",
         )
 
         embed.description = (
@@ -62,7 +62,7 @@ class Information(commands.Cog):
             url="https://discord.gg/47vGg2zwPu",
             description=(
                 f'[**Invite The Bot**]({self.bot.invite_url})\n'
-                f'[**Join our Community**](https://discord.gg/t8g6vGyYJx)\n\n'
+                f'[**Join our Community**](https://discord.gg/6q7Fbf7F)\n\n'
                 "**Description:**\n"
                 f'```yml\n'
                 f'{self.bot.description}\n'
