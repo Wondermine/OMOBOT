@@ -4,7 +4,7 @@ import os
 from bot.bot import OMOBOT
 
 from dotenv import load_dotenv
-load_env()
+load_dotenv()
 
 
 def determine_prefix(client, message):
