@@ -62,10 +62,6 @@ def text_splitter(text: str):
     text2 = " ".join(texts_list[1])
     text3 = " ".join(texts_list[2])
 
-    print(text1)
-    print(text2)
-    print(text3)
-
     return [text1, text2, text3]
 
 

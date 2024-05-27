@@ -1,0 +1,29 @@
+name: OMOBOT upload
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    name: Upload repository to Pterodactyl
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Compress Repository
+        run: zip -r repo.zip .
+
+      - name: Upload to Pterodactyl
+        uses: rexlmanu/pterodactyl-upload-action@v2.1
+        with:
+          panel-host: ${{ secrets.PANEL_HOST }}
+          api-key: ${{ secrets.API_KEY }}
+          server-id: ${{ secrets.SERVER_ID }}
+          source: "repo.zip"
+          target: "./"
+          restart: true
+          decompress-target: true

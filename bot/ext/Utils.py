@@ -1,8 +1,4 @@
 from discord.ext import commands
-import discord
-import time
-
-from discord import app_commands
 
 from bot.bot import OMOBOT
 
@@ -18,6 +14,13 @@ class Utilities(commands.Cog):
             await self.bot.reload_extension(cog)
 
         await ctx.reply("reloaded all stuff?")
+
+    @commands.command()
+    @commands.is_owner()
+    async def sync(self, ctx):
+        print("sync command")
+        await self.bot.tree.sync()
+        await ctx.send('Command tree synced.')
 
 
 async def setup(bot: OMOBOT):

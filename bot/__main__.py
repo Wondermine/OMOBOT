@@ -3,6 +3,9 @@ from discord.app_commands import AppCommandError, CommandOnCooldown
 import os
 from bot.bot import OMOBOT
 
+from dotenv import load_dotenv
+load_env()
+
 
 def determine_prefix(client, message):
     return [f"<@{client.user.id}>", f"<@!{client.user.id}>"]

@@ -8,6 +8,9 @@ from datetime import datetime
 from discord.ext import commands
 
 from bot.data.utils import DataManager
+from dotenv import load_dotenv
+
+load_env()
 
 
 class OMOBOT(commands.AutoShardedBot):
