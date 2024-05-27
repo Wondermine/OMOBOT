@@ -1,5 +1,5 @@
 # OMOBOT
 
-## License
+## LICENSE
 
 [MIT](https://choosealicense.com/licenses/mit/)
