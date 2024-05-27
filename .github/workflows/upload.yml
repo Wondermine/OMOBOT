@@ -3,7 +3,7 @@ name: OMOBOT upload
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   upload:
